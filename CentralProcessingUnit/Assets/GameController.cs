@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    public static GameController instance;
+
+	void Start () 
+    {
+        instance = this;
+
+    }
+
+    public float GetTimeStep()
+    {
+        return 3f;
+    }
+
+
+    void Update () 
+    {
 		
 	}
 }

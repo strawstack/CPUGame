@@ -1,12 +1,24 @@
 # CPU
 
+# TODO
+
+- [ ] interface for a destination
+    - check if busy
+    - release what its holding
+    - accept a new process
+
 # Dev notes
+
+# Time step
+
+A time step means that every process will be told to go to its next destination if possible. Process controller is on its own loop and new processes will arrive if a spot is free when the time comes.
 
 # Process Controller
 
 Every so often a process is generated. A process steps forward once each time step until it finishes the entrance lane and gets to a CPU. At which point control is handed over to the CPU.
 
-# Process
+Get the time to the next process, and count down to that time. Keep is simple next process arrives as normal and time change takes effect on the next prediction. A process simply fails to arrive if there is one blocking it.
+
 
 # CPU
 

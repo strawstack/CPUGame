@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{DB1FEA45-F47D-9CD1-1FFB-EC5522D71287}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/ProcessController.cs">
+    <Files>
+      <File FileName="Assets/GameController.cs" Line="7" Column="1" />
+      <File FileName="Assets/ProcessController.cs" Line="7" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CentralProcessingUnit" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="ProcessController.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="79010352-e17b-4866-8815-9b0371921f52" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
