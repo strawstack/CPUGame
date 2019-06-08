@@ -1465,6 +1465,7 @@ GameObject:
   m_Component:
   - component: {fileID: 368461068}
   - component: {fileID: 368461067}
+  - component: {fileID: 368461069}
   m_Layer: 0
   m_Name: ProcessController
   m_TagString: Untagged
@@ -1483,6 +1484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5cb2a22a33544f5897ab90c2b90a268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  processFactory: {fileID: 0}
   ArrivalTop: {fileID: 864110755}
   ArrivalMid: {fileID: 1438637704}
   ArrivalBot: {fileID: 295369485}
@@ -1497,8 +1499,24 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &368461069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 368461066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0908e16f78364eef9ca6ead641a4de1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ALUProcess: {fileID: 1440030029951876, guid: 7ff898f21a9454211a0ac62468c0dba0, type: 2}
+  DiskProcess: {fileID: 1154634353068282, guid: 65dd00da28a824760a8e09ed93c74d49,
+    type: 2}
+  DoneProcess: {fileID: 1857204167838128, guid: 92b8353178f17480b87f0f0945f25dbc,
+    type: 2}
 --- !u!1 &430860475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1509,7 +1527,7 @@ GameObject:
   - component: {fileID: 430860477}
   - component: {fileID: 430860476}
   m_Layer: 0
-  m_Name: Dashed (2)
+  m_Name: CPU_D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2111,91 +2129,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &596336637
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 596336641}
-  - component: {fileID: 596336640}
-  - component: {fileID: 596336639}
-  - component: {fileID: 596336638}
-  m_Layer: 0
-  m_Name: Process
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!135 &596336638
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 596336637}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &596336639
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 596336637}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 2100000, guid: 74ff7326a56284d7ab363080b60b2b9d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &596336640
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 596336637}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &596336641
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 596336637}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.15, y: -0.31, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &621518229
 GameObject:
   m_ObjectHideFlags: 0
@@ -2282,7 +2215,7 @@ GameObject:
   - component: {fileID: 629961943}
   - component: {fileID: 629961942}
   m_Layer: 0
-  m_Name: Dashed (1)
+  m_Name: CPU_C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2872,6 +2805,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 879038065}
+  - component: {fileID: 879038066}
   m_Layer: 0
   m_Name: CPU
   m_TagString: Untagged
@@ -2897,6 +2831,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &879038066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 879038064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4770e7b4f4ce4da7898984c152c1e6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &901255892
 GameObject:
   m_ObjectHideFlags: 0
@@ -3442,7 +3387,7 @@ GameObject:
   - component: {fileID: 1286448610}
   - component: {fileID: 1286448609}
   m_Layer: 0
-  m_Name: Dashed
+  m_Name: CPU_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4046,7 +3991,7 @@ GameObject:
   - component: {fileID: 1557520983}
   - component: {fileID: 1557520982}
   m_Layer: 0
-  m_Name: Dashed (3)
+  m_Name: CPU_E
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4382,6 +4327,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1693670645}
+  - component: {fileID: 1693670646}
   m_Layer: 0
   m_Name: Arrival
   m_TagString: Untagged
@@ -4405,6 +4351,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1693670646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1693670644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f648b43e584a4ed8b89d56b6fba6769, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  top: {fileID: 864110755}
+  mid: {fileID: 1438637704}
+  bot: {fileID: 295369485}
 --- !u!1 &1710155017
 GameObject:
   m_ObjectHideFlags: 0
@@ -4717,7 +4677,7 @@ GameObject:
   - component: {fileID: 1938112679}
   - component: {fileID: 1938112678}
   m_Layer: 0
-  m_Name: Solid
+  m_Name: CPU_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -61,8 +61,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\GameController.cs" />
-    <Compile Include="Assets\ProcessController.cs" />
+    <Compile Include="Assets\ArrivalController.cs" />
+    <Compile Include="Assets\Scripts\CPUController.cs" />
+    <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\ProcessController.cs" />
+    <Compile Include="Assets\Scripts\ProcessFactory.cs" />
+    <Compile Include="Assets\Scripts\ProcessObject.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>/Users/richardhayes/Dropbox/projects/CPU_Repo/CentralProcessingUnit/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

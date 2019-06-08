@@ -2,10 +2,10 @@
 
 # TODO
 
-- [ ] interface for a destination
-    - check if busy
-    - release what its holding
-    - accept a new process
+- [ ] interface for a destination. Methods:
+    - [ ] check if busy
+    - [ ] release what its holding
+    - [ ] accept a new process
 
 # Dev notes
 
