@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameController : MonoBehaviour {
-
     public static GameController instance;
 
-	void Start () 
+    private void Awake()
     {
         instance = this;
+    }
+
+    void Start ()
+    {
 
     }
 
@@ -17,6 +20,10 @@ public class GameController : MonoBehaviour {
         return 3f;
     }
 
+    public float GetProcessTravelTime()
+    {
+        return 2f;
+    }
 
     void Update () 
     {

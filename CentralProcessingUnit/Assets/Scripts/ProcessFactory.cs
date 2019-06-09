@@ -14,7 +14,8 @@ public class ProcessFactory : MonoBehaviour {
     private float DiskChance = 4f;
     private float DoneChance = 2f;
 
-    void Start () {
+    void Start () 
+    {
         float upper_bound = AluChance;
         DiskChance += upper_bound;
         DoneChance += upper_bound;

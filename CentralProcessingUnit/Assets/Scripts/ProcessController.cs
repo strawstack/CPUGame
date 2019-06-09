@@ -14,7 +14,6 @@ public class ProcessController : MonoBehaviour {
     public GameObject ArrivalMid;
     public GameObject ArrivalBot;
 
-    private GameController gc = GameController.instance;
     private float timestep;
     private float timeInterval;
 
@@ -26,14 +25,16 @@ public class ProcessController : MonoBehaviour {
 
     void Start () 
     {
-        timestep = gc.GetTimeStep();
+        timestep = GameController.instance.GetTimeStep();
         timeInterval = timestep;
         traveling = new bool[] { false, false, false };
         instance = this;
     }
-	
+
     private void Create()
-    {   
+    {
+        if (ProcessFactory.instance == null) return;
+
         for (int i = 0; i < traveling.Length; i++)
         {
             int lane = (nextCPU + i) % traveling.Length;
@@ -62,9 +63,10 @@ public class ProcessController : MonoBehaviour {
                         ArrivalController.instance.ArrivalNotification(p, lane);
 
                         // Lane is free for travel
-                        traveling[lane] = false; 
-                    }
-                    );
+                        traveling[lane] = false;
+                    });
+
+                break; // only create one process
             }
         }
 
@@ -75,8 +77,8 @@ public class ProcessController : MonoBehaviour {
     {
 		if (timeInterval <= 0f)
         {
+            timeInterval = GameController.instance.GetTimeStep();
             Create();
-            timeInterval = gc.GetTimeStep();
         }
         timeInterval -= Time.deltaTime;
     }

@@ -61,7 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ArrivalController.cs" />
+    <Compile Include="Assets\Scripts\ArrivalController.cs" />
     <Compile Include="Assets\Scripts\CPUController.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\ProcessController.cs" />
