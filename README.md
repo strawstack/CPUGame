@@ -2,6 +2,9 @@
 
 # TODO
 
+- [ ] GC should handle the tick. All other subscribe
+- [ ] Events fire based on the tick
+- [ ] Design CPUController and wires
 - [ ] interface for a destination. Methods:
     - [ ] check if busy
     - [ ] release what its holding
