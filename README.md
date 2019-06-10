@@ -3,6 +3,8 @@
 # TODO
 
 - [ ] GC should handle the tick. All other subscribe
+- [ ] CPU should poll and take in new process if empty and correct color
+
 - [ ] Events fire based on the tick
 - [ ] Design CPUController and wires
 - [ ] interface for a destination. Methods:

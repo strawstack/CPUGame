@@ -1,16 +1,15 @@
 ﻿<Properties StartupConfiguration="{DB1FEA45-F47D-9CD1-1FFB-EC5522D71287}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/WireController.cs">
-    <Files>
-      <File FileName="Assets/MouseLightController.cs" Line="14" Column="9" />
-      <File FileName="Assets/WireController.cs" Line="39" Column="19" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CentralProcessingUnit" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True" />
-              <Node name="WireController.cs" selected="True" />
+              <Node name="Archive" expanded="True">
+                <Node name="Scripts" expanded="True">
+                  <Node name="CPUObject.cs" selected="True" />
+                </Node>
+              </Node>
             </Node>
           </Node>
         </State>

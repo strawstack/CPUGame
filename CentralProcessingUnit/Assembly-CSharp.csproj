@@ -61,14 +61,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\MouseLightController.cs" />
-    <Compile Include="Assets\Scripts\ArrivalController.cs" />
-    <Compile Include="Assets\Scripts\CPUController.cs" />
-    <Compile Include="Assets\Scripts\GameController.cs" />
-    <Compile Include="Assets\Scripts\ProcessController.cs" />
-    <Compile Include="Assets\Scripts\ProcessFactory.cs" />
-    <Compile Include="Assets\Scripts\ProcessObject.cs" />
-    <Compile Include="Assets\WireController.cs" />
+    <Compile Include="Assets\Archive\Interfaces\ITickEvent.cs" />
+    <Compile Include="Assets\Archive\Interfaces\IWireTarget.cs" />
+    <Compile Include="Assets\Archive\Scripts\ArrivalController.cs" />
+    <Compile Include="Assets\Archive\Scripts\ArrivalObject.cs" />
+    <Compile Include="Assets\Archive\Scripts\CPUController.cs" />
+    <Compile Include="Assets\Archive\Scripts\CPUObject.cs" />
+    <Compile Include="Assets\Archive\Scripts\GameController.cs" />
+    <Compile Include="Assets\Archive\Scripts\MouseLightController.cs" />
+    <Compile Include="Assets\Archive\Scripts\ProcessController.cs" />
+    <Compile Include="Assets\Archive\Scripts\ProcessFactory.cs" />
+    <Compile Include="Assets\Archive\Scripts\ProcessObject.cs" />
+    <Compile Include="Assets\Archive\Scripts\WireController.cs" />
+    <Compile Include="Assets\Archive\Scripts\WireObject.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>/Users/richardhayes/Dropbox/projects/CPU_Repo/CentralProcessingUnit/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

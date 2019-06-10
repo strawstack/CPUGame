@@ -1269,6 +1269,7 @@ GameObject:
   - component: {fileID: 295369486}
   - component: {fileID: 295369487}
   - component: {fileID: 295369488}
+  - component: {fileID: 295369489}
   m_Layer: 0
   m_Name: ArrivalBot
   m_TagString: Target
@@ -1361,6 +1362,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &295369489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 295369485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bf32a173fcc840bcb357d5b13d79cbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Index: 2
 --- !u!1 &306867587
 GameObject:
   m_ObjectHideFlags: 0
@@ -3194,6 +3207,7 @@ GameObject:
   - component: {fileID: 864110756}
   - component: {fileID: 864110757}
   - component: {fileID: 864110758}
+  - component: {fileID: 864110759}
   m_Layer: 0
   m_Name: ArrivalTop
   m_TagString: Target
@@ -3286,6 +3300,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &864110759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 864110755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bf32a173fcc840bcb357d5b13d79cbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Index: 0
 --- !u!1 &879038064
 GameObject:
   m_ObjectHideFlags: 0
@@ -4506,6 +4532,7 @@ GameObject:
   - component: {fileID: 1438637705}
   - component: {fileID: 1438637706}
   - component: {fileID: 1438637707}
+  - component: {fileID: 1438637708}
   m_Layer: 0
   m_Name: ArrivalMid
   m_TagString: Target
@@ -4598,6 +4625,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1438637708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1438637704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bf32a173fcc840bcb357d5b13d79cbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Index: 1
 --- !u!1 &1550596824
 GameObject:
   m_ObjectHideFlags: 0
@@ -5708,6 +5747,7 @@ GameObject:
   - component: {fileID: 1938112679}
   - component: {fileID: 1938112678}
   - component: {fileID: 1938112680}
+  - component: {fileID: 1938112681}
   m_Layer: 0
   m_Name: CPU_A
   m_TagString: Target
@@ -5800,6 +5840,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1938112681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1938112677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5cedf6f4ed3b464d9ae9bbb584b3437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1970593334
 GameObject:
   m_ObjectHideFlags: 0
