@@ -2,58 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MemoryCellController : MonoBehaviour, ISelectable {
+public class MemoryCellController : MonoBehaviour {
 
-    public GameObject normal;
-    public GameObject hover;
-    public GameObject selected;
+    public GameObject left;
+    public GameObject right;
 
-    private bool isSelected = false;
+    private bool selected = false;
 
-    public void OnHoverOut()
+    void Start()
     {
-        if (!isSelected)
-        {
-            Clear();
-            normal.SetActive(true);
-        }
+
     }
 
-    public void OnHoverOver()
+    public bool GetSelected()
     {
-        if (!isSelected)
-        {
-            Clear();
-            hover.SetActive(true);
-        }
+        return selected;
     }
 
-    public void OnSelect()
+    public void SetSelected(bool value)
     {
-        isSelected = true;
-        Clear();
-        selected.SetActive(true);
+        selected = value;
     }
 
-    public void OnUnSelect()
+    void Update()
     {
-        isSelected = false;
-        Clear();
-        hover.SetActive(true);
-    }
 
-    private void Clear()
-    {
-        normal.SetActive(false);
-        selected.SetActive(false);
-        hover.SetActive(false);
     }
-
-    void Start () {
-		
-	}
-		
-	void Update () {
-		
-	}
 }
