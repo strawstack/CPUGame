@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CPU
   - Target
+  - MemoryCell
   layers:
   - Default
   - TransparentFX

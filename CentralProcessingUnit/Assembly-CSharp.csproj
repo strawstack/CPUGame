@@ -74,6 +74,10 @@
     <Compile Include="Assets\Archive\Scripts\ProcessObject.cs" />
     <Compile Include="Assets\Archive\Scripts\WireController.cs" />
     <Compile Include="Assets\Archive\Scripts\WireObject.cs" />
+    <Compile Include="Assets\Interfaces\ISelectable.cs" />
+    <Compile Include="Assets\MouseColliderController.cs" />
+    <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\MemoryCellController.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>/Users/richardhayes/Dropbox/projects/CPU_Repo/CentralProcessingUnit/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
