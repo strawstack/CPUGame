@@ -19,6 +19,14 @@ public class KeyEventController : MonoBehaviour {
         {
             GameController.instance.OnNavigation("left");
         }
+        else if (Input.GetKeyDown("up"))
+        {
+            GameController.instance.OnModifyValue(1);
+        }
+        else if (Input.GetKeyDown("down"))
+        {
+            GameController.instance.OnModifyValue(-1);
+        }
         else
         {
             foreach (string key in keys)

@@ -6,8 +6,8 @@ public class GameController : MonoBehaviour {
 
     public static GameController instance;
 
-    private GameObject currentSelection;
-    private GameObject currentHover;
+    private GameObject currentSelection; // The currently selected component
+    private GameObject currentHover;     // The component that is being hovered
 
     void Awake () {
         instance = this;
@@ -57,6 +57,14 @@ public class GameController : MonoBehaviour {
         if (currentSelection != null)
         {
             currentSelection.GetComponent<MemoryCellTextController>().SetText(value); 
+        }
+    }
+
+    public void OnModifyValue(int value)
+    {
+        if (currentSelection != null)
+        {
+            currentSelection.GetComponent<MemoryCellTextController>().OnIncrementValue(value);
         }
     }
 
