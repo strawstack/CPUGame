@@ -74,17 +74,12 @@ public class GameController : MonoBehaviour {
         Debug.Log("Wait");
         yield return new WaitForSeconds(1f);
 
-        // Nav to PC
         Debug.Log("Nav to PC");
-        yield return new WaitForSeconds(1.5f);
-
-        // wait
-        Debug.Log("Wait");
-        yield return new WaitForSeconds(1f);
+        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.PC));
 
         // Read value from PC
         Debug.Log("Read value from PC");
-        yield return new WaitForSeconds(1.5f);
+        yield return StartCoroutine(RegisterRetriever.instance.ReadRegister(Register.PC));
         int pc = RegisterController.instance.GetRegisterValue(Register.PC);
         Debug.Log("PC: " + pc);
 
@@ -94,7 +89,9 @@ public class GameController : MonoBehaviour {
 
         // Nav to memory address
         Debug.Log("Nav to memory address");
-        yield return new WaitForSeconds(1.5f);
+        yield return StartCoroutine(MemoryRetriever.instance.ReadRegister(GridController.instance.GetCell(pc)));
+        int addressValue = GridController.instance.GetValue(pc);
+        Debug.Log("addressValue: " + addressValue);
 
         // wait
         Debug.Log("Wait");

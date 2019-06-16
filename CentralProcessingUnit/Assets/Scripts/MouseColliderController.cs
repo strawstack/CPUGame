@@ -11,7 +11,7 @@ public class MouseColliderController : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "MemoryCell")
+        if (collision.tag == "MemoryCell" || collision.tag == "GridMemoryCell")
         {
             collision.gameObject.GetComponent<ISelectable>().OnHoverOver();
             GameController.instance.OnHoverChange(collision.gameObject);
@@ -20,7 +20,7 @@ public class MouseColliderController : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "MemoryCell")
+        if (collision.tag == "MemoryCell" || collision.tag == "GridMemoryCell")
         {
             collision.gameObject.GetComponent<ISelectable>().OnHoverOut();
             GameController.instance.OnHoverChange(null);

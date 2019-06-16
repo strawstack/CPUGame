@@ -7,6 +7,7 @@ TagManager:
   - CPU
   - Target
   - MemoryCell
+  - GridMemoryCell
   layers:
   - Default
   - TransparentFX

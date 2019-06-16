@@ -47,6 +47,11 @@ public class RegisterController : MonoBehaviour {
 
     }
 
+    public MemoryCellController[] GetMemoryCells(Register r)
+    {
+        return registerLookup[r];
+    }
+
     void Update () {
 		
 	}
