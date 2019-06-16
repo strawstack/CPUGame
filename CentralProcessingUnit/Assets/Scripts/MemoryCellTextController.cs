@@ -43,7 +43,7 @@ public class MemoryCellTextController : MonoBehaviour {
         }
     }
 
-    private void SetValue(int number)
+    public void SetValue(int number)
     {
         if (number < range)
         {

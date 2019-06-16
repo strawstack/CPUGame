@@ -29,6 +29,11 @@ public class MemoryCellController : MonoBehaviour {
         return GetComponent<MemoryCellTextController>().GetValue();
     }
 
+    public void SetValue(int value)
+    {
+        GetComponent<MemoryCellTextController>().SetValue(value);
+    }
+
     void Update()
     {
 

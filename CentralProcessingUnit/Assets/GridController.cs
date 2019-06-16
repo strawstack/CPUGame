@@ -43,14 +43,37 @@ public class GridController : MonoBehaviour {
         }
     }
 	 
-    public MemoryCellController GetCell(int address)
+    public MemoryCellController[] GetCells(int address, int number)
     {
-        return grid[address];
+        MemoryCellController[] lst = new MemoryCellController[number];
+        MemoryCellController cell = grid[address];
+        for (int i = 0; i < number; i++)
+        {
+            lst[i] = cell;
+            cell = cell.right.GetComponent<MemoryCellController>();
+        }
+        return lst;
     }
 
-    public int GetValue(int address)
+    public int GetValue(int address, int number)
     {
-        return grid[address].GetValue();
+        int[] values = new int[number];
+        MemoryCellController cell = grid[address];
+
+        for (int i = 0; i < number; i++) {
+            values[i] = cell.GetValue();
+            cell = cell.right.GetComponent<MemoryCellController>();
+        }
+
+        int total = 0;
+        int power = (int)Mathf.Pow(16, number - 1);
+
+        for (int i = 0; i < number; i++)
+        {
+            total += values[i] * power;
+            power >>= 4;
+        }
+        return total;
     }
 
 	void Update () {

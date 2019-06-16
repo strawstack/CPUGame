@@ -89,6 +89,21 @@ public class RegisterRetriever : MonoBehaviour {
         }
     }
 
+    public IEnumerator WriteRegister(Register r, int value)
+    {    
+        MemoryCellController[] cells = RegisterController.instance.GetMemoryCells(r);
+
+        int power = (int)Mathf.Pow(2, cells.Length - 1);
+
+        foreach (MemoryCellController cell in cells)
+        {
+            yield return StartCoroutine(NavToLocation(cell.gameObject.transform.position, 0.125f));
+            cell.SetValue( ((power & value) > 0)? 1 : 0 );
+            power >>= 1;
+            yield return new WaitForSeconds(0.125f);
+        }
+    }
+
     public IEnumerator NavToRegister(Register r)
     {
         MemoryCellController cell = RegisterController.instance.GetMemoryCells(r)[0];

@@ -82,10 +82,13 @@ public class MemoryRetriever : MonoBehaviour
         yield return null;
     }
 
-    public IEnumerator ReadRegister(MemoryCellController cell)
+    public IEnumerator ReadRegister(MemoryCellController[] cells)
     {
-        yield return StartCoroutine(NavToLocation(cell.gameObject.transform.position));
-        yield return new WaitForSeconds(0.125f);
+        foreach (MemoryCellController cell in cells)
+        {
+            yield return StartCoroutine(NavToLocation(cell.gameObject.transform.position));
+            yield return new WaitForSeconds(0.125f);
+        }
     }
 
     void Update()

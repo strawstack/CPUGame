@@ -79,8 +79,8 @@ public class GameController : MonoBehaviour {
 
         // Read value from PC
         Debug.Log("Read value from PC");
-        yield return StartCoroutine(RegisterRetriever.instance.ReadRegister(Register.PC));
         int pc = RegisterController.instance.GetRegisterValue(Register.PC);
+        yield return StartCoroutine(RegisterRetriever.instance.WriteRegister(Register.PC, pc + 3));
         Debug.Log("PC: " + pc);
 
         // wait
@@ -89,17 +89,20 @@ public class GameController : MonoBehaviour {
 
         // Nav to memory address
         Debug.Log("Nav to memory address");
-        yield return StartCoroutine(MemoryRetriever.instance.ReadRegister(GridController.instance.GetCell(pc)));
-        int addressValue = GridController.instance.GetValue(pc);
+        yield return StartCoroutine(MemoryRetriever.instance.ReadRegister(GridController.instance.GetCells(pc, 3)));
+        int addressValue = GridController.instance.GetValue(pc, 3);
         Debug.Log("addressValue: " + addressValue);
 
         // wait
         Debug.Log("Wait");
         yield return new WaitForSeconds(1f);
 
+        Debug.Log("Nav to INSTC");
+        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.INSTC));
+
         // Load value into instc
         Debug.Log("Load value into instc");
-        yield return new WaitForSeconds(1.5f);
+        yield return StartCoroutine(RegisterController.instance.SetRegisterValue(Register.INSTC, addressValue));
 
         // wait
         Debug.Log("Wait");

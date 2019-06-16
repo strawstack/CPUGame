@@ -42,9 +42,9 @@ public class RegisterController : MonoBehaviour {
         return CellsToInteger(registerLookup[r]);
     }
 
-    public void SetRegisterValue(Register r)
+    public IEnumerator SetRegisterValue(Register r, int value)
     {
-
+        yield return StartCoroutine(RegisterRetriever.instance.WriteRegister(r, value));
     }
 
     public MemoryCellController[] GetMemoryCells(Register r)
