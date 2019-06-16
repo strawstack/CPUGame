@@ -63,6 +63,8 @@
   <ItemGroup>
     <Compile Include="Assets\BuildScripts\BuildController.cs" />
     <Compile Include="Assets\Interfaces\ISelectable.cs" />
+    <Compile Include="Assets\RegisterController.cs" />
+    <Compile Include="Assets\RegisterObject.cs" />
     <Compile Include="Assets\Scripts\ClickController.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\KeyEventController.cs" />

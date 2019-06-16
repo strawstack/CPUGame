@@ -24,6 +24,11 @@ public class MemoryCellController : MonoBehaviour {
         selected = value;
     }
 
+    public int GetValue()
+    {
+        return GetComponent<MemoryCellTextController>().GetValue();
+    }
+
     void Update()
     {
 

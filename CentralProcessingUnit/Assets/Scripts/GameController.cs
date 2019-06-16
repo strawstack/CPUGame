@@ -68,6 +68,58 @@ public class GameController : MonoBehaviour {
         }
     }
 
+    public IEnumerator RunSingleCommand()
+    {   
+        // Register input
+        Debug.Log("Wait");
+        yield return new WaitForSeconds(1f);
+
+        // Nav to PC
+        Debug.Log("Nav to PC");
+        yield return new WaitForSeconds(1.5f);
+
+        // wait
+        Debug.Log("Wait");
+        yield return new WaitForSeconds(1f);
+
+        // Read value from PC
+        Debug.Log("Read value from PC");
+        yield return new WaitForSeconds(1.5f);
+        int pc = RegisterController.instance.GetRegisterValue(Register.PC);
+        Debug.Log("PC: " + pc);
+
+        // wait
+        Debug.Log("Wait");
+        yield return new WaitForSeconds(1f);
+
+        // Nav to memory address
+        Debug.Log("Nav to memory address");
+        yield return new WaitForSeconds(1.5f);
+
+        // wait
+        Debug.Log("Wait");
+        yield return new WaitForSeconds(1f);
+
+        // Load value into instc
+        Debug.Log("Load value into instc");
+        yield return new WaitForSeconds(1.5f);
+
+        // wait
+        Debug.Log("Wait");
+        yield return new WaitForSeconds(1f);
+
+        // Fire correct instruction
+        Debug.Log("Fire correct instruction");
+        yield return new WaitForSeconds(1.5f);
+
+        // wait
+        Debug.Log("Wait");
+        yield return new WaitForSeconds(1f);
+
+        int instruction = RegisterController.instance.GetRegisterValue(Register.INSTC);
+        Debug.Log("instruction: " + instruction);
+    }
+
     void Update () {
 		
 	}

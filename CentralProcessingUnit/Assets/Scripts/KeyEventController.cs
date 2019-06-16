@@ -27,6 +27,10 @@ public class KeyEventController : MonoBehaviour {
         {
             GameController.instance.OnModifyValue(-1);
         }
+        else if (Input.GetKeyDown("return"))
+        {
+            StartCoroutine(GameController.instance.RunSingleCommand());
+        }
         else
         {
             foreach (string key in keys)

@@ -35,14 +35,21 @@ public class MemoryCellTextController : MonoBehaviour {
 
     public void SetText(string value)
     {
-        text.text = value.ToUpper();
-        numberValue = lookup[value];
+        int possibleNumber = lookup[value];
+        if (possibleNumber < range)
+        {
+            numberValue = possibleNumber;
+            text.text = value.ToUpper();
+        }
     }
 
     private void SetValue(int number)
     {
-        numberValue = number;
-        text.text = rlookup[numberValue].ToUpper();
+        if (number < range)
+        {
+            numberValue = number;
+            text.text = rlookup[numberValue].ToUpper();
+        }
     }
 
     public string GetText()
@@ -50,7 +57,12 @@ public class MemoryCellTextController : MonoBehaviour {
         return text.text.ToLower();
     }
 
-	void Update () {
+    public int GetValue()
+    {
+        return lookup[GetText()];
+    }
+
+    void Update () {
 		
 	}
 }
