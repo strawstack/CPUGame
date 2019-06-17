@@ -16,6 +16,8 @@ public class RegisterController : MonoBehaviour {
 
     public MemoryCellController[] instcCells;
     public MemoryCellController[] pcCells;
+    public MemoryCellController[] aCells;
+    public MemoryCellController[] bCells;
 
     private Dictionary<Register, MemoryCellController[]> registerLookup;
 
@@ -24,6 +26,8 @@ public class RegisterController : MonoBehaviour {
         registerLookup = new Dictionary<Register, MemoryCellController[]>();
         registerLookup.Add(Register.INSTC, instcCells);
         registerLookup.Add(Register.PC, pcCells);
+        registerLookup.Add(Register.A, aCells);
+        registerLookup.Add(Register.B, bCells);
     }
 	
     private int CellsToInteger(MemoryCellController[] cells)

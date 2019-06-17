@@ -4,6 +4,13 @@
 
 - [x] Make register retriever
 - [x] Make memory retriever
+- [x] Memory retriever must take arg of how many values to read
+- [x] Write address value to instruction register
+- [x] Fire *load a* instruction
+- [x] Fire *load b* instruction
+- [x] Fire *add* instruction
 
-- [ ] memory retriever must take arg of how many values to read
-- [ ] write address value to instruction register
+- [ ] Prevent enter press while animating
+- [ ] Shift + enter should fire instructions until break or halt
+- [ ] Preview labels for registers
+- [ ] Game prompt dropdown from top

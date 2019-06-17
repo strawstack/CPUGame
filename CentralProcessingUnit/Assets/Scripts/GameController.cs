@@ -8,10 +8,76 @@ public class GameController : MonoBehaviour {
 
     private GameObject currentSelection; // The currently selected component
     private GameObject currentHover;     // The component that is being hovered
+    private Dictionary<int, Instruction> instructionLookup;
+    private delegate IEnumerator Instruction(int arg);
 
     void Awake () {
         instance = this;
-	}
+        instructionLookup = new Dictionary<int, Instruction>();
+        instructionLookup.Add(0x000, Add);
+        instructionLookup.Add(0xd00, LoadA);
+        instructionLookup.Add(0xe00, LoadB);
+    }
+
+    private IEnumerator LoadA(int addr)
+    {
+        Debug.Log("Nav to memory address");
+        yield return StartCoroutine(MemoryRetriever.instance.NavToCell(GridController.instance.GetCells(addr, 1)[0]));
+
+        Debug.Log("Read Memory address");
+        yield return StartCoroutine(MemoryRetriever.instance.ReadRegister(GridController.instance.GetCells(addr, 2)));
+        int addressValue = GridController.instance.GetValue(addr, 2);
+
+        Debug.Log("Nav to A");
+        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.A));
+
+        // Load value into instc
+        Debug.Log("Load value into A");
+        yield return StartCoroutine(RegisterController.instance.SetRegisterValue(Register.A, addressValue));
+    }
+
+    private IEnumerator LoadB(int addr)
+    {
+        Debug.Log("Nav to memory address");
+        yield return StartCoroutine(MemoryRetriever.instance.NavToCell(GridController.instance.GetCells(addr, 1)[0]));
+
+        yield return StartCoroutine(MemoryRetriever.instance.ReadRegister(GridController.instance.GetCells(addr, 2)));
+        int addressValue = GridController.instance.GetValue(addr, 2);
+
+        Debug.Log("Nav to B");
+        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.B));
+
+        // Load value into instc
+        Debug.Log("Load value into B");
+        yield return StartCoroutine(RegisterController.instance.SetRegisterValue(Register.B, addressValue));
+    }
+
+    private IEnumerator Add(int n)
+    {
+        Debug.Log("Nav to A");
+        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.A));
+
+        Debug.Log("Read value from A");
+        yield return StartCoroutine(RegisterRetriever.instance.ReadRegister(Register.A));
+        int a = RegisterController.instance.GetRegisterValue(Register.A);
+
+        Debug.Log("Nav to B");
+        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.B));
+
+        Debug.Log("Read value from B");
+        yield return StartCoroutine(RegisterRetriever.instance.ReadRegister(Register.B));
+        int b = RegisterController.instance.GetRegisterValue(Register.B);
+
+        // operation
+        int ans = a + b;
+
+        Debug.Log("Nav to A");
+        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.A));
+
+        // Load value into A
+        Debug.Log("Load value into A");
+        yield return StartCoroutine(RegisterController.instance.SetRegisterValue(Register.A, ans));
+    }
 
     public void OnSelectionChange(GameObject selection)
     {
@@ -89,6 +155,9 @@ public class GameController : MonoBehaviour {
 
         // Nav to memory address
         Debug.Log("Nav to memory address");
+        yield return StartCoroutine(MemoryRetriever.instance.NavToCell(GridController.instance.GetCells(pc, 1)[0]));
+
+        Debug.Log("Read memory address");
         yield return StartCoroutine(MemoryRetriever.instance.ReadRegister(GridController.instance.GetCells(pc, 3)));
         int addressValue = GridController.instance.GetValue(pc, 3);
         Debug.Log("addressValue: " + addressValue);
@@ -110,14 +179,15 @@ public class GameController : MonoBehaviour {
 
         // Fire correct instruction
         Debug.Log("Fire correct instruction");
-        yield return new WaitForSeconds(1.5f);
+        int instruction = 0xF00 & addressValue;
+        int arg = 0x0FF & addressValue;
+        Debug.Log("Instruction: " + instruction);
+        Debug.Log("Arg: " + arg);
+        yield return StartCoroutine(instructionLookup[instruction](arg));
 
         // wait
         Debug.Log("Wait");
         yield return new WaitForSeconds(1f);
-
-        int instruction = RegisterController.instance.GetRegisterValue(Register.INSTC);
-        Debug.Log("instruction: " + instruction);
     }
 
     void Update () {

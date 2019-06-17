@@ -15,7 +15,7 @@ public class MemoryRetriever : MonoBehaviour
         instance = this;
     }
 
-    private IEnumerator NavToLocation(Vector3 loc)
+    private IEnumerator NavToLocation(Vector3 loc, float duration)
     {
 
         float threshold = 0.05f;
@@ -24,7 +24,6 @@ public class MemoryRetriever : MonoBehaviour
         float vs = vLine.GetPosition(0).x;
 
         float elapsed = 0f;
-        float duration = 1f;
 
         // check for completion
 
@@ -86,9 +85,15 @@ public class MemoryRetriever : MonoBehaviour
     {
         foreach (MemoryCellController cell in cells)
         {
-            yield return StartCoroutine(NavToLocation(cell.gameObject.transform.position));
+            yield return StartCoroutine(NavToLocation(cell.gameObject.transform.position, 0.125f));
             yield return new WaitForSeconds(0.125f);
         }
+    }
+
+    public IEnumerator NavToCell(MemoryCellController cell)
+    {
+        yield return StartCoroutine(NavToLocation(cell.gameObject.transform.position, 1f));
+        yield return new WaitForSeconds(0.125f);
     }
 
     void Update()
