@@ -435,6 +435,17 @@ public class GameController : MonoBehaviour {
         yield return new WaitForSeconds(GameController.instance.moveSpeed);
     }
 
+    public int CellsToInteger(MemoryCellController[] cells)
+    {
+        int size = cells.Length;
+        int total = 0;
+        for (int i = 0; i < size; i++)
+        {
+            total += cells[i].GetValue() * (int)Mathf.Pow(2, size - i - 1);
+        }
+        return total;
+    }
+
     void Update () {
 		
 	}

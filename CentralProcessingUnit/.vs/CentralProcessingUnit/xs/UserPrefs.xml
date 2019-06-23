@@ -1,11 +1,8 @@
 ﻿<Properties StartupConfiguration="{DB1FEA45-F47D-9CD1-1FFB-EC5522D71287}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/RegisterRetriever.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/NumericalPreview.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameController.cs" Line="289" Column="1" />
-      <File FileName="Assets/RegisterController.cs" Line="54" Column="52" />
-      <File FileName="Assets/MemoryRetriever.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/MemoryCellController.cs" Line="16" Column="1" />
-      <File FileName="Assets/RegisterRetriever.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/NumericalPreview.cs" Line="38" Column="75" />
+      <File FileName="Assets/Scripts/InstructionPreview.cs" Line="10" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,8 +11,9 @@
             <Node name="Assets" expanded="True">
               <Node name="BuildScripts" expanded="True" />
               <Node name="Interfaces" expanded="True" />
-              <Node name="Scripts" expanded="True" />
-              <Node name="RegisterRetriever.cs" selected="True" />
+              <Node name="Scripts" expanded="True">
+                <Node name="NumericalPreview.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>

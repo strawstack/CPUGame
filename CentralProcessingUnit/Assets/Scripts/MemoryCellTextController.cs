@@ -41,6 +41,7 @@ public class MemoryCellTextController : MonoBehaviour {
             numberValue = possibleNumber;
             text.text = value.ToUpper();
         }
+        GetComponent<MemoryCellController>().OnChange();
     }
 
     public void SetValue(int number)
@@ -50,6 +51,7 @@ public class MemoryCellTextController : MonoBehaviour {
             numberValue = number;
             text.text = rlookup[numberValue].ToUpper();
         }
+        GetComponent<MemoryCellController>().OnChange();
     }
 
     public string GetText()

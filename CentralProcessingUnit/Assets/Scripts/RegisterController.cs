@@ -30,20 +30,9 @@ public class RegisterController : MonoBehaviour {
         registerLookup.Add(Register.B, bCells);
     }
 
-    private int CellsToInteger(MemoryCellController[] cells)
-    {
-        int size = cells.Length;
-        int total = 0;
-        for (int i = 0; i < size; i++)
-        {
-            total += cells[i].GetValue() * (int)Mathf.Pow(2, size - i - 1);
-        }
-        return total;
-    }
-
     public int GetRegisterValue(Register r)
     {
-        int value = CellsToInteger(registerLookup[r]);
+        int value = GameController.instance.CellsToInteger(registerLookup[r]);
 
         if (r == Register.A || r == Register.B) // Flip from 2's Compliment
         {
