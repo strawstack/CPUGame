@@ -29,7 +29,7 @@ public class RegisterController : MonoBehaviour {
         registerLookup.Add(Register.A, aCells);
         registerLookup.Add(Register.B, bCells);
     }
-	
+
     private int CellsToInteger(MemoryCellController[] cells)
     {
         int size = cells.Length;
@@ -43,11 +43,35 @@ public class RegisterController : MonoBehaviour {
 
     public int GetRegisterValue(Register r)
     {
-        return CellsToInteger(registerLookup[r]);
+        int value = CellsToInteger(registerLookup[r]);
+
+        if (r == Register.A || r == Register.B) // Flip from 2's Compliment
+        {
+            if (value > 0x7F)
+            {
+                value ^= 0xFF; // flip the eight bits
+                value += 1;    // add one
+                value *= -1;   // add negative sign
+            }
+        }
+
+        return value;
     }
 
     public IEnumerator SetRegisterValue(Register r, int value)
     {
+
+        if (r == Register.A || r == Register.B) // Place in 2's Compliment
+        {
+            if (value < 0)
+            {
+                value &= 0xFF; // cut value to 8 bits
+                value ^= 0xFF; // flip the 8 bits
+                value += 1;    // add one
+                value *= -1;   // remove negative sign
+            }
+        }
+
         yield return StartCoroutine(RegisterRetriever.instance.WriteRegister(r, value));
     }
 

@@ -5,7 +5,9 @@ using UnityEngine;
 public class GameController : MonoBehaviour {
 
     public static GameController instance;
-
+    public float moveSpeed;
+    public float readSpeed;
+    
     private GameObject currentSelection; // The currently selected component
     private GameObject currentHover;     // The component that is being hovered
     private Dictionary<int, Instruction> instructionLookup;
@@ -15,8 +17,278 @@ public class GameController : MonoBehaviour {
         instance = this;
         instructionLookup = new Dictionary<int, Instruction>();
         instructionLookup.Add(0x000, Add);
+        instructionLookup.Add(0x100, Sub);
+        instructionLookup.Add(0x200, Mult);
+
+        instructionLookup.Add(0x300, Beq);
+        instructionLookup.Add(0x400, Blt);
+        instructionLookup.Add(0x500, Bgt);
+
+        //instructionLookup.Add(0x600, null);
+        //instructionLookup.Add(0x700, null);
+
+        instructionLookup.Add(0x800, Add_direct);
+        instructionLookup.Add(0x900, Sub_direct);
+        instructionLookup.Add(0xa00, Mult_direct);
+
+        instructionLookup.Add(0xb00, Beq_direct);
+
+        instructionLookup.Add(0xc00, StoreA);
         instructionLookup.Add(0xd00, LoadA);
-        instructionLookup.Add(0xe00, LoadB);
+        instructionLookup.Add(0xe00, LoadB);        
+
+        //instructionLookup.Add(0xf00, Halt);
+    }
+
+    private IEnumerator Add(int not_used)
+    {
+        Debug.Log("Nav to A");
+        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.A));
+
+        Debug.Log("Read value from A");
+        yield return StartCoroutine(RegisterRetriever.instance.ReadRegister(Register.A));
+        int a = RegisterController.instance.GetRegisterValue(Register.A);
+
+        Debug.Log("Nav to B");
+        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.B));
+
+        Debug.Log("Read value from B");
+        yield return StartCoroutine(RegisterRetriever.instance.ReadRegister(Register.B));
+        int b = RegisterController.instance.GetRegisterValue(Register.B);
+
+        // operation
+        int ans = a + b;
+
+        Debug.Log("Nav to A");
+        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.A));
+
+        // Load value into A
+        Debug.Log("Load value into A");
+        yield return StartCoroutine(RegisterController.instance.SetRegisterValue(Register.A, ans));
+    }
+
+    private IEnumerator Sub(int not_used)
+    {
+        Debug.Log("Nav to A");
+        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.A));
+
+        Debug.Log("Read value from A");
+        yield return StartCoroutine(RegisterRetriever.instance.ReadRegister(Register.A));
+        int a = RegisterController.instance.GetRegisterValue(Register.A);
+
+        Debug.Log("Nav to B");
+        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.B));
+
+        Debug.Log("Read value from B");
+        yield return StartCoroutine(RegisterRetriever.instance.ReadRegister(Register.B));
+        int b = RegisterController.instance.GetRegisterValue(Register.B);
+
+        // operation
+        int ans = a - b;
+
+        Debug.Log("Nav to A");
+        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.A));
+
+        // Load value into A
+        Debug.Log("Load value into A");
+        yield return StartCoroutine(RegisterController.instance.SetRegisterValue(Register.A, ans));
+    }
+
+    private IEnumerator Mult(int not_used)
+    {
+        Debug.Log("Nav to A");
+        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.A));
+
+        Debug.Log("Read value from A");
+        yield return StartCoroutine(RegisterRetriever.instance.ReadRegister(Register.A));
+        int a = RegisterController.instance.GetRegisterValue(Register.A);
+
+        Debug.Log("Nav to B");
+        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.B));
+
+        Debug.Log("Read value from B");
+        yield return StartCoroutine(RegisterRetriever.instance.ReadRegister(Register.B));
+        int b = RegisterController.instance.GetRegisterValue(Register.B);
+
+        // operation
+        int ans = a * b;
+
+        Debug.Log("Nav to A");
+        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.A));
+
+        // Load value into A
+        Debug.Log("Load value into A");
+        yield return StartCoroutine(RegisterController.instance.SetRegisterValue(Register.A, ans));
+    }
+
+    private IEnumerator Beq(int addr)
+    {
+        Debug.Log("Nav to A");
+        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.A));
+
+        Debug.Log("Read value from A");
+        yield return StartCoroutine(RegisterRetriever.instance.ReadRegister(Register.A));
+        int a = RegisterController.instance.GetRegisterValue(Register.A);
+
+        if (a == 0)
+        {
+            Debug.Log("Nav to PC");
+            yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.PC));
+
+            // Load value into PC
+            Debug.Log("Load value into PC");
+            yield return StartCoroutine(RegisterController.instance.SetRegisterValue(Register.PC, addr));
+        }
+    }
+
+    private IEnumerator Blt(int addr)
+    {
+        Debug.Log("Nav to A");
+        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.A));
+
+        Debug.Log("Read value from A");
+        yield return StartCoroutine(RegisterRetriever.instance.ReadRegister(Register.A));
+        int a = RegisterController.instance.GetRegisterValue(Register.A);
+
+        if (a < 0)
+        {
+            Debug.Log("Nav to PC");
+            yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.PC));
+
+            // Load value into PC
+            Debug.Log("Load value into PC");
+            yield return StartCoroutine(RegisterController.instance.SetRegisterValue(Register.PC, addr));
+        }
+    }
+
+    private IEnumerator Bgt(int addr)
+    {
+        Debug.Log("Nav to A");
+        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.A));
+
+        Debug.Log("Read value from A");
+        yield return StartCoroutine(RegisterRetriever.instance.ReadRegister(Register.A));
+        int a = RegisterController.instance.GetRegisterValue(Register.A);
+
+        if (a > 0)
+        {
+            Debug.Log("Nav to PC");
+            yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.PC));
+
+            // Load value into PC
+            Debug.Log("Load value into PC");
+            yield return StartCoroutine(RegisterController.instance.SetRegisterValue(Register.PC, addr));
+        }
+    }
+
+    private IEnumerator Add_direct(int value)
+    {
+        Debug.Log("Nav to A");
+        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.A));
+
+        Debug.Log("Read value from A");
+        yield return StartCoroutine(RegisterRetriever.instance.ReadRegister(Register.A));
+        int a = RegisterController.instance.GetRegisterValue(Register.A);
+
+        // operation
+        int ans = a + value;
+
+        Debug.Log("Nav to A");
+        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.A));
+
+        // Load value into A
+        Debug.Log("Load value into A");
+        yield return StartCoroutine(RegisterController.instance.SetRegisterValue(Register.A, ans));
+    }
+
+    private IEnumerator Sub_direct(int value)
+    {
+        Debug.Log("Nav to A");
+        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.A));
+
+        Debug.Log("Read value from A");
+        yield return StartCoroutine(RegisterRetriever.instance.ReadRegister(Register.A));
+        int a = RegisterController.instance.GetRegisterValue(Register.A);
+
+        // operation
+        int ans = a - value;
+
+        Debug.Log("Nav to A");
+        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.A));
+
+        // Load value into A
+        Debug.Log("Load value into A");
+        yield return StartCoroutine(RegisterController.instance.SetRegisterValue(Register.A, ans));
+    }
+
+    private IEnumerator Mult_direct(int value)
+    {
+        Debug.Log("Nav to A");
+        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.A));
+
+        Debug.Log("Read value from A");
+        yield return StartCoroutine(RegisterRetriever.instance.ReadRegister(Register.A));
+        int a = RegisterController.instance.GetRegisterValue(Register.A);
+
+        // operation
+        int ans = a * value;
+
+        Debug.Log("Nav to A");
+        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.A));
+
+        // Load value into A
+        Debug.Log("Load value into A");
+        yield return StartCoroutine(RegisterController.instance.SetRegisterValue(Register.A, ans));
+    }
+
+    private IEnumerator Beq_direct(int addr)
+    {
+        Debug.Log("Nav to memory address");
+        yield return StartCoroutine(MemoryRetriever.instance.NavToCell(GridController.instance.GetCells(addr, 1)[0]));
+
+        Debug.Log("Read Memory address");
+        yield return StartCoroutine(MemoryRetriever.instance.ReadRegister(GridController.instance.GetCells(addr, 2)));
+        int addressValue = GridController.instance.GetValue(addr, 2);
+
+        if (addressValue == 0)
+        {
+            Debug.Log("Nav to A");
+            yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.A));
+
+            Debug.Log("Read value from A");
+            yield return StartCoroutine(RegisterRetriever.instance.ReadRegister(Register.A));
+            int a = RegisterController.instance.GetRegisterValue(Register.A);
+
+            if (a >= 0)
+            {
+                Debug.Log("Nav to PC");
+                yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.PC));
+
+                // Load value into PC
+                Debug.Log("Load value into PC");
+                yield return StartCoroutine(RegisterController.instance.SetRegisterValue(Register.PC, a));
+            }
+            else
+            {
+                Debug.Log("Can't branch to negative address");
+            }
+        }
+    }
+
+    private IEnumerator StoreA(int addr)
+    {
+        Debug.Log("Nav to A");
+        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.A));
+
+        Debug.Log("Read value from A");
+        yield return StartCoroutine(RegisterRetriever.instance.ReadRegister(Register.A));
+        int a = RegisterController.instance.GetRegisterValue(Register.A);
+
+        Debug.Log("Nav to memory address");
+        yield return StartCoroutine(MemoryRetriever.instance.NavToCell(GridController.instance.GetCells(addr, 1)[0]));
+
+        Debug.Log("Write to memory address");
+        yield return StartCoroutine(MemoryRetriever.instance.WriteRegister(GridController.instance.GetCells(addr, 2), a));
     }
 
     private IEnumerator LoadA(int addr)
@@ -50,33 +322,6 @@ public class GameController : MonoBehaviour {
         // Load value into instc
         Debug.Log("Load value into B");
         yield return StartCoroutine(RegisterController.instance.SetRegisterValue(Register.B, addressValue));
-    }
-
-    private IEnumerator Add(int n)
-    {
-        Debug.Log("Nav to A");
-        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.A));
-
-        Debug.Log("Read value from A");
-        yield return StartCoroutine(RegisterRetriever.instance.ReadRegister(Register.A));
-        int a = RegisterController.instance.GetRegisterValue(Register.A);
-
-        Debug.Log("Nav to B");
-        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.B));
-
-        Debug.Log("Read value from B");
-        yield return StartCoroutine(RegisterRetriever.instance.ReadRegister(Register.B));
-        int b = RegisterController.instance.GetRegisterValue(Register.B);
-
-        // operation
-        int ans = a + b;
-
-        Debug.Log("Nav to A");
-        yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.A));
-
-        // Load value into A
-        Debug.Log("Load value into A");
-        yield return StartCoroutine(RegisterController.instance.SetRegisterValue(Register.A, ans));
     }
 
     public void OnSelectionChange(GameObject selection)
@@ -138,7 +383,7 @@ public class GameController : MonoBehaviour {
     {   
         // Register input
         Debug.Log("Wait");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(GameController.instance.moveSpeed);
 
         Debug.Log("Nav to PC");
         yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.PC));
@@ -151,7 +396,7 @@ public class GameController : MonoBehaviour {
 
         // wait
         Debug.Log("Wait");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(GameController.instance.moveSpeed);
 
         // Nav to memory address
         Debug.Log("Nav to memory address");
@@ -164,7 +409,7 @@ public class GameController : MonoBehaviour {
 
         // wait
         Debug.Log("Wait");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(GameController.instance.moveSpeed);
 
         Debug.Log("Nav to INSTC");
         yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.INSTC));
@@ -175,7 +420,7 @@ public class GameController : MonoBehaviour {
 
         // wait
         Debug.Log("Wait");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(GameController.instance.moveSpeed);
 
         // Fire correct instruction
         Debug.Log("Fire correct instruction");
@@ -187,7 +432,7 @@ public class GameController : MonoBehaviour {
 
         // wait
         Debug.Log("Wait");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(GameController.instance.moveSpeed);
     }
 
     void Update () {

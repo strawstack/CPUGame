@@ -84,8 +84,8 @@ public class RegisterRetriever : MonoBehaviour {
         MemoryCellController[] cells = RegisterController.instance.GetMemoryCells(r);
         foreach (MemoryCellController cell in cells)
         {
-            yield return StartCoroutine(NavToLocation(cell.gameObject.transform.position, 0.125f));
-            yield return new WaitForSeconds(0.125f);
+            yield return StartCoroutine(NavToLocation(cell.gameObject.transform.position, GameController.instance.readSpeed));
+            yield return new WaitForSeconds(GameController.instance.readSpeed);
         }
     }
 
@@ -97,18 +97,18 @@ public class RegisterRetriever : MonoBehaviour {
 
         foreach (MemoryCellController cell in cells)
         {
-            yield return StartCoroutine(NavToLocation(cell.gameObject.transform.position, 0.125f));
+            yield return StartCoroutine(NavToLocation(cell.gameObject.transform.position, GameController.instance.readSpeed));
             cell.SetValue( ((power & value) > 0)? 1 : 0 );
             power >>= 1;
-            yield return new WaitForSeconds(0.125f);
+            yield return new WaitForSeconds(GameController.instance.readSpeed);
         }
     }
 
     public IEnumerator NavToRegister(Register r)
     {
         MemoryCellController cell = RegisterController.instance.GetMemoryCells(r)[0];
-        yield return StartCoroutine(NavToLocation(cell.gameObject.transform.position, 1f));
-        yield return new WaitForSeconds(0.125f);
+        yield return StartCoroutine(NavToLocation(cell.gameObject.transform.position, GameController.instance.moveSpeed));
+        yield return new WaitForSeconds(GameController.instance.readSpeed);
     }
 
     void Update () {

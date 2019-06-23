@@ -85,15 +85,38 @@ public class MemoryRetriever : MonoBehaviour
     {
         foreach (MemoryCellController cell in cells)
         {
-            yield return StartCoroutine(NavToLocation(cell.gameObject.transform.position, 0.125f));
-            yield return new WaitForSeconds(0.125f);
+            yield return StartCoroutine(NavToLocation(cell.gameObject.transform.position, GameController.instance.readSpeed));
+            yield return new WaitForSeconds(GameController.instance.readSpeed);
+        }
+    }
+
+    public IEnumerator WriteRegister(MemoryCellController[] cells, int value)
+    {
+        // write value to cells in packets of 4 bits at a time
+
+        int packets = cells.Length;
+        int mask = 0xF << (4 * (packets - 1));
+
+        for (int p = 0; p < packets; p++)
+        {
+            // value of this packet
+            int v = (mask & value) >> (4 * (packets - p - 1));
+            mask >>= 4;
+
+            // first cell in this packet of 4
+            MemoryCellController cell = cells[p];
+            yield return StartCoroutine(NavToLocation(cell.gameObject.transform.position, GameController.instance.readSpeed));
+
+            // place value in cell
+            cell.SetValue(v);            
+            yield return new WaitForSeconds(GameController.instance.readSpeed);
         }
     }
 
     public IEnumerator NavToCell(MemoryCellController cell)
     {
-        yield return StartCoroutine(NavToLocation(cell.gameObject.transform.position, 1f));
-        yield return new WaitForSeconds(0.125f);
+        yield return StartCoroutine(NavToLocation(cell.gameObject.transform.position, GameController.instance.moveSpeed));
+        yield return new WaitForSeconds(GameController.instance.readSpeed);
     }
 
     void Update()
