@@ -10,6 +10,12 @@
 - [x] Fire *load b* instruction
 - [x] Fire *add* instruction
 
+- [ ] ProgramCounter dot
+- [ ] Money display
+- [ ] MoneyController
+- [ ] Rework program execution
+- [ ] Charge money to stop program before halt
+
 - [ ] Prevent enter press while animating
 - [ ] Shift + enter should fire instructions until break or halt
 - [ ] Preview labels for registers

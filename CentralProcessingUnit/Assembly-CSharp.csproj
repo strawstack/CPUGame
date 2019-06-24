@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\BuildScripts\BuildController.cs" />
+    <Compile Include="Assets\DotController.cs" />
     <Compile Include="Assets\Interfaces\ICellListener.cs" />
     <Compile Include="Assets\Interfaces\ISelectable.cs" />
     <Compile Include="Assets\Scripts\ClickController.cs" />
