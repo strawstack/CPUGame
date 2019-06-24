@@ -11,7 +11,15 @@ public class KeyEventController : MonoBehaviour {
     }
 
 	void Update () {
-        if (Input.GetKeyDown("right"))
+        if (Input.GetKeyDown("t"))
+        {
+            MoneyController.instance.ChangeMoney(-3.32f);
+        }
+        else if (Input.GetKeyDown("k"))
+        {
+            MoneyController.instance.ChangeMoney(2.40f);
+        }
+        else if (Input.GetKeyDown("right"))
         {
             GameController.instance.OnNavigation("right");
         }

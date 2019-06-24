@@ -9,8 +9,8 @@
 - [x] Fire *load a* instruction
 - [x] Fire *load b* instruction
 - [x] Fire *add* instruction
+- [x] ProgramCounter dot
 
-- [ ] ProgramCounter dot
 - [ ] Money display
 - [ ] MoneyController
 - [ ] Rework program execution

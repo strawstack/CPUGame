@@ -65,6 +65,7 @@
     <Compile Include="Assets\DotController.cs" />
     <Compile Include="Assets\Interfaces\ICellListener.cs" />
     <Compile Include="Assets\Interfaces\ISelectable.cs" />
+    <Compile Include="Assets\MoneyController.cs" />
     <Compile Include="Assets\Scripts\ClickController.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\GridController.cs" />

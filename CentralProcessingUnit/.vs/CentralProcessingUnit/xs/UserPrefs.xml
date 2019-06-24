@@ -1,12 +1,5 @@
 ﻿<Properties StartupConfiguration="{DB1FEA45-F47D-9CD1-1FFB-EC5522D71287}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/DotController.cs">
-    <Files>
-      <File FileName="Assets/Scripts/GameController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GridController.cs" Line="59" Column="6" />
-      <File FileName="Assets/Scripts/RegisterController.cs" Line="18" Column="35" />
-      <File FileName="Assets/DotController.cs" Line="28" Column="1" />
-      <File FileName="Assets/Scripts/InstructionPreview.cs" Line="1" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
@@ -14,8 +7,9 @@
             <Node name="Assets" expanded="True">
               <Node name="BuildScripts" expanded="True" />
               <Node name="Interfaces" expanded="True" />
-              <Node name="Scripts" expanded="True" />
-              <Node name="DotController.cs" selected="True" />
+              <Node name="Scripts" expanded="True">
+                <Node name="KeyEventController.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
@@ -24,7 +18,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="081c519d-91d6-4cd9-9beb-0fb9605a4b28" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="64c79d3d-de47-41bd-9260-e3ebb6238cc5" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
