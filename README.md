@@ -10,9 +10,22 @@
 - [x] Fire *load b* instruction
 - [x] Fire *add* instruction
 - [x] ProgramCounter dot
+- [x] Money display
+- [x] MoneyController
 
-- [ ] Money display
-- [ ] MoneyController
+- [x] Red flash / green flash
+- [ ] Static colored cell
+- [ ] Locked cells
+- [ ] small preview for requested number
+
+- [ ] Run button
+- [ ] Halt button
+- [ ] Memory reads cause a loss of money
+- [ ] On halt, green flash for success
+- [ ] On halt, red flash for incomplete
+- [ ] Stop execution button
+- [ ] Start button changes behavior of enter press
+
 - [ ] Rework program execution
 - [ ] Charge money to stop program before halt
 

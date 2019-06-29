@@ -257,6 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 102683846302753000}
+  range: 16
 --- !u!114 &114532663510174004
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -9,15 +9,33 @@ public class MemoryCellController : MonoBehaviour {
 
     private bool selected = false;
     private List<ICellListener> listeners;
+    private Animation clip;
 
     private void Awake()
     {
         listeners = new List<ICellListener>();
+        clip = GetComponent<Animation>();               
     }
 
     void Start()
     {
         
+    }
+
+    private void Flash(string animationName)
+    {        
+        if (clip == null) return;
+
+        if (clip.isPlaying)
+        {
+            clip.Stop();
+        }
+        clip.Play(animationName);
+
+        if (animationName == "RedFlash")
+        {
+            MoneyController.instance.OnChangeRequest(TransactionType.READ, 1);
+        }
     }
 
     public bool GetSelected()
@@ -29,9 +47,10 @@ public class MemoryCellController : MonoBehaviour {
     {
         selected = value;
     }
-
+    
     public int GetValue()
     {
+        Flash("RedFlash");        
         return GetComponent<MemoryCellTextController>().GetValue();
     }
 
