@@ -7,12 +7,14 @@ public class GameController : MonoBehaviour {
     public static GameController instance;
     public float moveSpeed;
     public float readSpeed;
-    
-    private GameObject currentSelection; // The currently selected component
+	public bool haltFlag  = false;
+	public bool isRunning = false;
+
+	private GameObject currentSelection; // The currently selected component
     private GameObject currentHover;     // The component that is being hovered
     private Dictionary<int, Instruction> instructionLookup;
     private delegate IEnumerator Instruction(int arg);
-
+	
     void Awake () {
         instance = this;
         instructionLookup = new Dictionary<int, Instruction>();
@@ -37,7 +39,7 @@ public class GameController : MonoBehaviour {
         instructionLookup.Add(0xd00, LoadA);
         instructionLookup.Add(0xe00, LoadB);        
 
-        //instructionLookup.Add(0xf00, Halt);
+        instructionLookup.Add(0xf00, Halt);
     }
 
     private IEnumerator Add(int not_used)
@@ -324,7 +326,14 @@ public class GameController : MonoBehaviour {
         yield return StartCoroutine(RegisterController.instance.SetRegisterValue(Register.B, addressValue));
     }
 
-    public void OnSelectionChange(GameObject selection)
+	private IEnumerator Halt(int not_used)
+	{
+        // flag checked in event loop (RunSingleCommand)
+		haltFlag = true;
+		yield return null;
+	}
+
+	public void OnSelectionChange(GameObject selection)
     {
         if (currentSelection != null) currentSelection.GetComponent<ISelectable>().OnUnSelect();
         currentSelection = selection;
@@ -433,6 +442,18 @@ public class GameController : MonoBehaviour {
         // wait
         Debug.Log("Wait");
         yield return new WaitForSeconds(GameController.instance.moveSpeed);
+
+        // Run the next command unless halt
+        int HALT = 0xF00;
+        if (haltFlag || instruction == HALT)
+        {
+            haltFlag  = false;
+            isRunning = false;
+        }
+        else
+        {
+            yield return StartCoroutine(RunSingleCommand());
+        }
     }
 
     public int CellsToInteger(MemoryCellController[] cells)

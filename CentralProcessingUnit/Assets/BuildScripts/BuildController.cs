@@ -5,13 +5,55 @@ using UnityEngine;
 public class BuildController : MonoBehaviour {
 
     public GameObject memoryCell;
+    public GameObject previewText;
 
     private float columnGap = 1.2f;
     private float rowGap    = -1.2f;
     private List<List<GameObject>> grid;
 
-	void Start () {
+    private float xPreviewOffset = 0.29f;
+    private float yPreviewOffset = 0.251f;
+    private GameObject[] memoryCells;
 
+    void Start () {        
+
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown("m"))
+        {            
+            PlacePreviewText();
+        }    
+    }
+
+    private void PlacePreviewText()
+    {
+        memoryCells = GameObject.FindGameObjectsWithTag("GridMemoryCell");
+
+        foreach(GameObject obj in memoryCells)
+        {
+            GameObject t = obj.transform.Find("Preview").gameObject;
+            t.tag = "CellValuePreview";
+            t.SetActive(false);
+            /* GameObject temp = Instantiate(previewText);
+            temp.transform.parent = obj.transform;
+            temp.transform.position = obj.transform.position;
+
+            temp.transform.position = new Vector3(
+                temp.transform.position.x + xPreviewOffset,
+                temp.transform.position.y + yPreviewOffset,
+                obj.transform.position.z);
+
+            temp.name = "Preview";
+            temp.SetActive(false);
+            temp.tag = "CellValuePreview";
+            */
+        }
+    }
+
+    private void MakeMemoryGrid()
+    {
         GameObject prev = null;
         grid = new List<List<GameObject>>();
 

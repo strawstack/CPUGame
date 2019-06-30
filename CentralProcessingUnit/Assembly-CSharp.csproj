@@ -65,11 +65,11 @@
     <Compile Include="Assets\Interfaces\ICellListener.cs" />
     <Compile Include="Assets\Interfaces\ISelectable.cs" />
     <Compile Include="Assets\Scripts\ClickController.cs" />
-    <Compile Include="Assets\Scripts\ColorController.cs" />
     <Compile Include="Assets\Scripts\DotController.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\GridController.cs" />
     <Compile Include="Assets\Scripts\InstructionPreview.cs" />
+    <Compile Include="Assets\Scripts\JobController.cs" />
     <Compile Include="Assets\Scripts\KeyEventController.cs" />
     <Compile Include="Assets\Scripts\MemoryCellController.cs" />
     <Compile Include="Assets\Scripts\MemoryCellTextController.cs" />

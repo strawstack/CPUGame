@@ -10,6 +10,8 @@ public class MemoryCellController : MonoBehaviour {
     private bool selected = false;
     private List<ICellListener> listeners;
     private Animation clip;
+	private int previewNumber;
+    private string[] keys;
 
     private void Awake()
     {
@@ -19,7 +21,7 @@ public class MemoryCellController : MonoBehaviour {
 
     void Start()
     {
-        
+        keys = new string[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f" };
     }
 
     private void Flash(string animationName)
@@ -72,7 +74,23 @@ public class MemoryCellController : MonoBehaviour {
         }
     }
 
-    void Update()
+    public void SetPreviewNumberActivation(bool value)
+    {
+        gameObject.transform.Find("Preview").gameObject.SetActive(value);
+    }
+
+    public void SetPreviewNumber(int number)
+	{
+        previewNumber = number;
+        gameObject.transform.Find("Preview").GetComponent<TextMesh>().text = keys[previewNumber].ToUpper();
+	}
+
+	public int GetPreviewNumber()
+	{
+        return previewNumber;
+    }
+
+	void Update()
     {
 
     }

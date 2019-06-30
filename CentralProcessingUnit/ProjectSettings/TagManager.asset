@@ -8,6 +8,7 @@ TagManager:
   - Target
   - MemoryCell
   - GridMemoryCell
+  - CellValuePreview
   layers:
   - Default
   - TransparentFX

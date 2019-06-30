@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KeyEventController : MonoBehaviour {
 
-    private string[] keys;
+    private string[] keys;    
 
 	void Start () {
         keys = new string[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f" };
@@ -13,7 +13,8 @@ public class KeyEventController : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown("t"))
         {
-            ColorController.instance.MakeColor(5, 0, ColorTypes.ORANGE);
+            JobController.instance.MakeColor(5, 0, ColorTypes.ORANGE);
+            JobController.instance.SetValuePreview(5, 0, 10);
         }
         else if (Input.GetKeyDown("right"))
         {
@@ -33,7 +34,15 @@ public class KeyEventController : MonoBehaviour {
         }
         else if (Input.GetKeyDown("return"))
         {
-            StartCoroutine(GameController.instance.RunSingleCommand());
+            if (GameController.instance.isRunning)
+            {
+                GameController.instance.haltFlag = true;
+            }
+            else
+            {
+                GameController.instance.isRunning = true;
+                StartCoroutine(GameController.instance.RunSingleCommand());
+            }            
         }
         else
         {

@@ -13,9 +13,9 @@ public enum ColorTypes
     BROWN
 }
 
-public class ColorController : MonoBehaviour {
+public class JobController : MonoBehaviour {
 
-    public static ColorController instance;
+    public static JobController instance;
 
     public Material orange;
 
@@ -36,6 +36,18 @@ public class ColorController : MonoBehaviour {
                 cell.transform.Find("Normal").GetComponent<SpriteRenderer>().material = orange;
 				break;
 		}
+    }
+
+    public void SetValuePreview(int row, int col, int value)
+    {
+        if (value < 0 || value > 15 )
+            throw new System.ArgumentException("Value must be between 0 and 15", "value");
+
+        int addr = row * 8 + col;
+        MemoryCellController cell = GridController.instance.GetCells(addr, 1)[0];
+
+        cell.SetPreviewNumber(value);
+        cell.SetPreviewNumberActivation(true);
     }
 
 	void Update () {
