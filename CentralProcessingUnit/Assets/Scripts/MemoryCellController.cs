@@ -24,7 +24,7 @@ public class MemoryCellController : MonoBehaviour {
         keys = new string[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f" };
     }
 
-    private void Flash(string animationName)
+    public void Flash(string animationName)
     {        
         if (clip == null) return;
 
@@ -52,7 +52,8 @@ public class MemoryCellController : MonoBehaviour {
     
     public int GetValue()
     {
-        Flash("RedFlash");        
+        if (GameController.instance.isRunning)
+            Flash("RedFlash");
         return GetComponent<MemoryCellTextController>().GetValue();
     }
 

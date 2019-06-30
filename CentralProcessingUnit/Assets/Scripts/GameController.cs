@@ -449,6 +449,7 @@ public class GameController : MonoBehaviour {
         {
             haltFlag  = false;
             isRunning = false;
+            JobController.instance.CheckColoredCellStatus();
         }
         else
         {

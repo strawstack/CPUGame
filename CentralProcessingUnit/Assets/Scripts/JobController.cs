@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum ColorTypes
 {
+    NORMAL,
     ORANGE,
     PURPLE,
     PINK,
@@ -17,25 +18,34 @@ public class JobController : MonoBehaviour {
 
     public static JobController instance;
 
+    public Material normal;
     public Material orange;
 
-    // public Animation orangePulse;
+    private Dictionary<ColorTypes, List<MemoryCellController>> coloredCells;
+    private ColorTypes[] colorTypesIter;
 
     void Start () {
-        instance = this;        
+        instance = this;
+        colorTypesIter = new ColorTypes[] { ColorTypes.ORANGE, ColorTypes.PURPLE, ColorTypes.PINK, ColorTypes.YELLOW, ColorTypes.LIGHT_BLUE, ColorTypes.DARK_BLUE, ColorTypes.BROWN };
+        coloredCells = new Dictionary<ColorTypes, List<MemoryCellController>>();
+        foreach(ColorTypes type in colorTypesIter)
+            coloredCells.Add(type, new List<MemoryCellController>());
     }
 
     public void MakeColor(int row, int col, ColorTypes type)
     {
         int addr = row * 8 + col;
         MemoryCellController cell = GridController.instance.GetCells(addr, 1)[0];
-        
-        switch(type)
+
+        // track colored cell
+        coloredCells[type].Add(cell);
+
+        switch (type)
 		{
-			case ColorTypes.ORANGE:
+            case ColorTypes.ORANGE:
                 cell.transform.Find("Normal").GetComponent<SpriteRenderer>().material = orange;
-				break;
-		}
+				break;            
+		}        
     }
 
     public void SetValuePreview(int row, int col, int value)
@@ -50,7 +60,61 @@ public class JobController : MonoBehaviour {
         cell.SetPreviewNumberActivation(true);
     }
 
-	void Update () {
+    private void JobFails(ColorTypes type)
+    {
+        foreach(MemoryCellController cell in coloredCells[type])
+        {
+            cell.SetValue(0);
+            cell.Flash("RedFlash");
+        }
+        MoneyController.instance.OnChangeRequest(TransactionType.FAIL, coloredCells[type].Count);
+    }
+
+    private void JobSuccess(ColorTypes type)
+    {
+        foreach (MemoryCellController cell in coloredCells[type])
+        {
+            cell.transform.Find("Normal").GetComponent<SpriteRenderer>().material = normal;
+            cell.Flash("GreenFlash");            
+        }
+        MoneyController.instance.OnChangeRequest(TransactionType.COMPLETE, coloredCells[type].Count);
+        coloredCells[type].Clear();
+    }
+
+    public void CheckColoredCellStatus()
+    {
+        // Erase and return success if completed
+        // Leave and deduct if failed
+        foreach (ColorTypes type in colorTypesIter)
+        {
+            int total = coloredCells[type].Count; // number of cells in job
+            if (total == 0) continue;
+            int touched  = 0; // number of non zero cells
+            int complete = 0; // number of completed cells
+            foreach (MemoryCellController cell in coloredCells[type])
+            {
+                if (cell.GetValue() != 0)
+                    touched += 1;
+
+                if (cell.GetPreviewNumber() == cell.GetValue())
+                    complete += 1;
+            }
+
+            // touched and complete = 0 then leave it
+            // touched != 0 and complete < total = fail and leave
+            // complete = total then success and remove
+            if (touched != 0 && complete < total)
+            {
+                JobFails(type);
+            }
+            else if (complete == total)
+            {
+                JobSuccess(type);
+            }
+        }
+    }
+
+    void Update () {
 		
 	}
 }

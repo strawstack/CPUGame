@@ -5,7 +5,8 @@ using UnityEngine;
 public enum TransactionType
 {
     READ,
-    COMPLETE
+    COMPLETE,
+    FAIL
 }
 
 public class MoneyController : MonoBehaviour {
@@ -59,7 +60,7 @@ public class MoneyController : MonoBehaviour {
 
     public void OnChangeRequest(TransactionType type, int numberCells)
     {
-        if (type == TransactionType.READ)
+        if (type == TransactionType.READ || type == TransactionType.FAIL)
         {
             ChangeMoney(-1 * numberCells * readAmount);
         }

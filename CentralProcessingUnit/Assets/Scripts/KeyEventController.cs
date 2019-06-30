@@ -14,7 +14,10 @@ public class KeyEventController : MonoBehaviour {
         if (Input.GetKeyDown("t"))
         {
             JobController.instance.MakeColor(5, 0, ColorTypes.ORANGE);
-            JobController.instance.SetValuePreview(5, 0, 10);
+            JobController.instance.SetValuePreview(5, 0, 5);
+
+            JobController.instance.MakeColor(5, 1, ColorTypes.ORANGE);
+            JobController.instance.SetValuePreview(5, 1, 10);
         }
         else if (Input.GetKeyDown("right"))
         {
