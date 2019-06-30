@@ -18,15 +18,16 @@
 - [x] Rework program execution
 - [x] Enter press queues halt if pressed while running
 - [x] small preview for requested number
+- [x] On halt, check if any colored cells are fulfilled, and add money
+- [x] On halt, if cells partially filled, remove money
+- [x] On halt, colored blocks of cells fail, remain untouched, or succeed
+- [x] On halt, green flash for success, and money
+- [x] On halt, red flash for incomplete, and lose money
 
-- [ ] On halt, check if any colored cells are fulfilled, and add money
-    - [] On halt, if cells partially filled, remove money
 - [ ] Add colors to ColorController
 - [ ] Locked cells
-    - [ ] Manual write to locked cell should fail
-- [ ] Prevent edit during running program
-- [ ] On halt, colored blocks of cells fail, remain untouched, or succeed
-    - [ ] On halt, green flash for success, and money
-    - [ ] On halt, red flash for incomplete, and lose money
+    - [ ] Manual write to locked cell should fail (no write to colored cell)
+- [ ] Prevent edit of cells during execution
+    - [ ] remove selected cell highlight during execution
 - [ ] Run button
 - [ ] Halt button and charge money
