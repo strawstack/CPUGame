@@ -9,6 +9,11 @@ public class GridController : MonoBehaviour {
 
     private MemoryCellController[] grid;
 
+    void Awake()
+	{
+		instance = this;
+	}
+
 	void Start () {
         instance = this;
 

@@ -13,11 +13,7 @@ public class KeyEventController : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown("t"))
         {
-            MoneyController.instance.ChangeMoney(-3.32f);
-        }
-        else if (Input.GetKeyDown("k"))
-        {
-            MoneyController.instance.ChangeMoney(2.40f);
+            ColorController.instance.MakeColor(5, 0, ColorTypes.ORANGE);
         }
         else if (Input.GetKeyDown("right"))
         {
