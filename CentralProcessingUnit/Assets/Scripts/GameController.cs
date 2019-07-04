@@ -8,13 +8,21 @@ public class GameController : MonoBehaviour {
     public float moveSpeed;
     public float readSpeed;
 	public bool haltFlag  = false;
-	public bool isRunning = false;
+	public bool isRunning = false;    
 
-	private GameObject currentSelection; // The currently selected component
+    private GameObject currentSelection; // The currently selected component
     private GameObject currentHover;     // The component that is being hovered
     private Dictionary<int, Instruction> instructionLookup;
     private delegate IEnumerator Instruction(int arg);
-	
+    private StartState startState = StartState.FreePlay;
+    private enum StartState
+    {
+        FreePlay,
+        Starting,
+        Started,
+        Ending
+    }
+
     void Awake () {
         instance = this;
         instructionLookup = new Dictionary<int, Instruction>();
@@ -450,6 +458,8 @@ public class GameController : MonoBehaviour {
             haltFlag  = false;
             isRunning = false;
             JobController.instance.CheckColoredCellStatus();
+
+            // TODO - if something was completed maybe place a new one?
         }
         else
         {
@@ -466,6 +476,47 @@ public class GameController : MonoBehaviour {
             total += cells[i].GetValue() * (int)Mathf.Pow(2, size - i - 1);
         }
         return total;
+    }
+
+    private void ZeroizeGrid()
+    {
+        RegisterController.instance.Zeroize();
+        GridController.instance.Zeroize();
+    }
+
+    private void PlaceColors()
+    {
+        JobController.instance.PlaceColors();
+    }
+
+    private void EraseColors()
+    {
+
+    }
+
+    public void OnStartButtonPress()
+    {
+        switch(startState)
+        {
+            case StartState.FreePlay:
+                startState = StartState.Starting;
+                ZeroizeGrid();
+                PlaceColors();
+                startState = StartState.Started;
+                StartButtonController.instance.OnStart();
+                break;           
+            case StartState.Started:
+                startState = StartState.Ending;
+                ZeroizeGrid();
+                EraseColors();
+                // TODO - Show the player their score
+                StartButtonController.instance.OnEnd();
+                startState = StartState.FreePlay;
+                break;
+            case StartState.Starting:
+            case StartState.Ending:
+                break;
+        }
     }
 
     void Update () {

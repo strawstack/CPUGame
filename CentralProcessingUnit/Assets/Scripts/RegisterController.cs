@@ -69,6 +69,18 @@ public class RegisterController : MonoBehaviour {
         return registerLookup[r];
     }
 
+    public void Zeroize()
+    {
+        foreach (KeyValuePair<Register, MemoryCellController[]> pair in registerLookup)
+        {
+            MemoryCellController[] cellLst = pair.Value;
+            foreach (MemoryCellController cell in cellLst)
+            {
+                cell.SetValue(0);
+            }
+        }
+    }
+
     void Update () {
 		
 	}

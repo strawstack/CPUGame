@@ -9,6 +9,7 @@ TagManager:
   - MemoryCell
   - GridMemoryCell
   - CellValuePreview
+  - Button
   layers:
   - Default
   - TransparentFX

@@ -10,8 +10,7 @@ public enum ColorTypes
     PINK,
     YELLOW,
     LIGHT_BLUE,
-    DARK_BLUE,
-    BROWN
+    DARK_BLUE
 }
 
 public class JobController : MonoBehaviour {
@@ -20,16 +19,30 @@ public class JobController : MonoBehaviour {
 
     public Material normal;
     public Material orange;
+    public Material purple;
+    public Material pink;
+    public Material yellow;
+    public Material light_blue;
+    public Material dark_blue;
 
     private Dictionary<ColorTypes, List<MemoryCellController>> coloredCells;
+    private Dictionary<ColorTypes, Material> materialLookup;
     private ColorTypes[] colorTypesIter;
 
     void Start () {
         instance = this;
-        colorTypesIter = new ColorTypes[] { ColorTypes.ORANGE, ColorTypes.PURPLE, ColorTypes.PINK, ColorTypes.YELLOW, ColorTypes.LIGHT_BLUE, ColorTypes.DARK_BLUE, ColorTypes.BROWN };
+        colorTypesIter = new ColorTypes[] { ColorTypes.ORANGE, ColorTypes.PURPLE, ColorTypes.PINK, ColorTypes.YELLOW, ColorTypes.LIGHT_BLUE, ColorTypes.DARK_BLUE };
         coloredCells = new Dictionary<ColorTypes, List<MemoryCellController>>();
         foreach(ColorTypes type in colorTypesIter)
             coloredCells.Add(type, new List<MemoryCellController>());
+
+        materialLookup = new Dictionary<ColorTypes, Material>();
+        materialLookup.Add(ColorTypes.ORANGE, orange);
+        materialLookup.Add(ColorTypes.PURPLE, purple);
+        materialLookup.Add(ColorTypes.PINK, pink);
+        materialLookup.Add(ColorTypes.YELLOW, yellow);
+        materialLookup.Add(ColorTypes.LIGHT_BLUE, light_blue);
+        materialLookup.Add(ColorTypes.DARK_BLUE, dark_blue);
     }
 
     public void MakeColor(int row, int col, ColorTypes type)
@@ -39,13 +52,7 @@ public class JobController : MonoBehaviour {
 
         // track colored cell
         coloredCells[type].Add(cell);
-
-        switch (type)
-		{
-            case ColorTypes.ORANGE:
-                cell.transform.Find("Normal").GetComponent<SpriteRenderer>().material = orange;
-				break;            
-		}        
+        cell.transform.Find("Normal").GetComponent<SpriteRenderer>().material = materialLookup[type];
     }
 
     public void SetValuePreview(int row, int col, int value)
@@ -70,15 +77,20 @@ public class JobController : MonoBehaviour {
         MoneyController.instance.OnChangeRequest(TransactionType.FAIL, coloredCells[type].Count);
     }
 
-    private void JobSuccess(ColorTypes type)
+    private void JobSuccess(ColorTypes type, int multiplier)
     {
         foreach (MemoryCellController cell in coloredCells[type])
         {
             cell.transform.Find("Normal").GetComponent<SpriteRenderer>().material = normal;
             cell.Flash("GreenFlash");            
         }
-        MoneyController.instance.OnChangeRequest(TransactionType.COMPLETE, coloredCells[type].Count);
+        MoneyController.instance.OnChangeRequest(TransactionType.COMPLETE, coloredCells[type].Count * multiplier);
         coloredCells[type].Clear();
+    }
+
+    public void PlaceColors()
+    {
+
     }
 
     public void CheckColoredCellStatus()
@@ -91,6 +103,7 @@ public class JobController : MonoBehaviour {
             if (total == 0) continue;
             int touched  = 0; // number of non zero cells
             int complete = 0; // number of completed cells
+            int multiplier = 1;
             foreach (MemoryCellController cell in coloredCells[type])
             {
                 if (cell.GetValue() != 0)
@@ -109,7 +122,8 @@ public class JobController : MonoBehaviour {
             }
             else if (complete == total)
             {
-                JobSuccess(type);
+                JobSuccess(type, multiplier);
+                multiplier += 1;
             }
         }
     }

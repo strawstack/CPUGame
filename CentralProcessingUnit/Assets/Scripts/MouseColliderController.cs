@@ -16,6 +16,10 @@ public class MouseColliderController : MonoBehaviour {
             collision.gameObject.GetComponent<ISelectable>().OnHoverOver();
             GameController.instance.OnHoverChange(collision.gameObject);
         }
+        if (collision.tag == "Button")
+        {
+            StartButtonController.instance.SetBackgroundActive(true);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -24,6 +28,10 @@ public class MouseColliderController : MonoBehaviour {
         {
             collision.gameObject.GetComponent<ISelectable>().OnHoverOut();
             GameController.instance.OnHoverChange(null);
+        }
+        if (collision.tag == "Button")
+        {
+            StartButtonController.instance.SetBackgroundActive(false);
         }
     }
 

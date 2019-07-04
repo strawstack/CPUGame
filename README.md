@@ -23,11 +23,18 @@
 - [x] On halt, colored blocks of cells fail, remain untouched, or succeed
 - [x] On halt, green flash for success, and money
 - [x] On halt, red flash for incomplete, and lose money
+- [x] Add colors to JobController
 
-- [ ] Add colors to ColorController
+- [ ] Start button in bottom left
+    - [ ] Free play prior to start button press
+    - [ ] Changes to End on press
+    - [ ] End press gives you your final score
+    - [ ] Click event places initial colored squares
+- [ ] Halt button in bottom right    
+    - [ ] Button only active when program running
+    - [ ] Halt fee is a percentage of your current money
+
 - [ ] Locked cells
     - [ ] Manual write to locked cell should fail (no write to colored cell)
 - [ ] Prevent edit of cells during execution
     - [ ] remove selected cell highlight during execution
-- [ ] Run button
-- [ ] Halt button and charge money

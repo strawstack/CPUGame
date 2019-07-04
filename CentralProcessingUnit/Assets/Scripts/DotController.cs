@@ -20,12 +20,15 @@ public class DotController : MonoBehaviour, ICellListener {
     public void OnChange()
     {        
         int addr = GameController.instance.CellsToInteger(cells);
-        MemoryCellController cell = GridController.instance.GetCells(addr, 1)[0];
-        Vector3 p = cell.gameObject.transform.position;
-        dot.transform.position = new Vector3(
-            p.x - offset,
-            p.y - offset,
-            p.z);
+        if (addr < 80)
+        {
+            MemoryCellController cell = GridController.instance.GetCells(addr, 1)[0];
+            Vector3 p = cell.gameObject.transform.position;
+            dot.transform.position = new Vector3(
+                p.x - offset,
+                p.y - offset,
+                p.z);
+        }
     }
 
     void Update () {

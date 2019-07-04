@@ -81,7 +81,15 @@ public class GridController : MonoBehaviour {
         return total;
     }
 
-	void Update () {
+    public void Zeroize()
+    {            
+        foreach (MemoryCellController cell in grid)
+        {
+            cell.SetValue(0);
+        }
+    }
+
+    void Update () {
 		
 	}
 }

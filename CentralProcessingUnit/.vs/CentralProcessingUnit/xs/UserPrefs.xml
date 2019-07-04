@@ -1,12 +1,13 @@
 ﻿<Properties StartupConfiguration="{DB1FEA45-F47D-9CD1-1FFB-EC5522D71287}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MemoryCellController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/HaltController.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameController.cs" Line="452" Column="61" />
-      <File FileName="Assets/Scripts/KeyEventController.cs" Line="20" Column="62" />
-      <File FileName="Assets/Scripts/JobController.cs" Line="102" Column="1" />
-      <File FileName="Assets/Scripts/MemoryCellController.cs" Line="27" Column="11" />
-      <File FileName="Assets/Scripts/MoneyController.cs" Line="63" Column="74" />
-      <File FileName="Assets/Scripts/GridController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameController.cs" Line="491" Column="1" />
+      <File FileName="Assets/Scripts/RegisterController.cs" Line="72" Column="1" />
+      <File FileName="Assets/Scripts/RegisterRetriever.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GridController.cs" Line="83" Column="1" />
+      <File FileName="Assets/Scripts/DotController.cs" Line="31" Column="10" />
+      <File FileName="Assets/StartButtonController.cs" Line="39" Column="27" />
+      <File FileName="Assets/HaltController.cs" Line="7" Column="16" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,9 +16,8 @@
             <Node name="Assets" expanded="True">
               <Node name="BuildScripts" expanded="True" />
               <Node name="Interfaces" expanded="True" />
-              <Node name="Scripts" expanded="True">
-                <Node name="MemoryCellController.cs" selected="True" />
-              </Node>
+              <Node name="Scripts" expanded="True" />
+              <Node name="HaltController.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -26,7 +26,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c7fa4dc6-591c-4e49-b0a0-108ade0b3c81" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6a6bacc5-a7ae-44cb-931d-ef17bc2d73e2" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

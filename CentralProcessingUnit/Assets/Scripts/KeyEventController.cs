@@ -11,15 +11,12 @@ public class KeyEventController : MonoBehaviour {
     }
 
 	void Update () {
-        if (Input.GetKeyDown("t"))
+        if (Input.GetMouseButtonUp(0))
         {
-            JobController.instance.MakeColor(5, 0, ColorTypes.ORANGE);
-            JobController.instance.SetValuePreview(5, 0, 5);
-
-            JobController.instance.MakeColor(5, 1, ColorTypes.ORANGE);
-            JobController.instance.SetValuePreview(5, 1, 10);
+            StartButtonController.instance.OnClick();
         }
-        else if (Input.GetKeyDown("right"))
+
+        if (Input.GetKeyDown("right"))
         {
             GameController.instance.OnNavigation("right");
         }
