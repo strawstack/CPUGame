@@ -18,13 +18,14 @@ public class JobController : MonoBehaviour {
     public static JobController instance;
 
     public Material normal;
-    public Material orange;
-    public Material purple;
-    public Material pink;
-    public Material yellow;
-    public Material light_blue;
-    public Material dark_blue;
+    public Material orange;     // multiple cells single value
+    public Material purple;     // scattered multiple values
+    public Material pink;       // scattered single value
+    public Material yellow;     // multiple cells incrementing value
+	public Material light_blue; // vertical list
+	public Material dark_blue;  // single value
 
+	private delegate bool Condition(MemoryCellController cell);
     private Dictionary<ColorTypes, List<MemoryCellController>> coloredCells;
     private Dictionary<ColorTypes, Material> materialLookup;
     private ColorTypes[] colorTypesIter;
@@ -49,10 +50,15 @@ public class JobController : MonoBehaviour {
     {
         int addr = row * 8 + col;
         MemoryCellController cell = GridController.instance.GetCells(addr, 1)[0];
+        MakeColor(cell, type);
+	}
 
+    private void MakeColor(MemoryCellController cell, ColorTypes type)
+    {
         // track colored cell
         coloredCells[type].Add(cell);
         cell.transform.Find("Normal").GetComponent<SpriteRenderer>().material = materialLookup[type];
+        cell.isColored = true;
     }
 
     public void SetValuePreview(int row, int col, int value)
@@ -62,6 +68,14 @@ public class JobController : MonoBehaviour {
 
         int addr = row * 8 + col;
         MemoryCellController cell = GridController.instance.GetCells(addr, 1)[0];
+
+        SetValuePreview(cell, value);
+    }
+
+    private void SetValuePreview(MemoryCellController cell, int value)
+    {
+        if (value < 0 || value > 15)
+            throw new System.ArgumentException("Value must be between 0 and 15", "value");
 
         cell.SetPreviewNumber(value);
         cell.SetPreviewNumberActivation(true);
@@ -82,16 +96,111 @@ public class JobController : MonoBehaviour {
         foreach (MemoryCellController cell in coloredCells[type])
         {
             cell.transform.Find("Normal").GetComponent<SpriteRenderer>().material = normal;
-            cell.Flash("GreenFlash");            
+			cell.isColored = false;
+			cell.Flash("GreenFlash");            
         }
         MoneyController.instance.OnChangeRequest(TransactionType.COMPLETE, coloredCells[type].Count * multiplier);
         coloredCells[type].Clear();
     }
 
+    private bool All(MemoryCellController[] grid, int start, int end, Condition condition)
+	{
+		// return true if all conditions are true, otherwise false
+		for (int i = start; i < end; i++)
+		{
+            if (!condition(grid[i]))
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
+    private MemoryCellController[] SubList(MemoryCellController[] grid, int start, int end)
+	{
+		int size = end - start;
+		MemoryCellController[] ans = new MemoryCellController[size];
+        for (int i = 0; i < size; i++)
+		{
+			ans[i] = grid[start + i];
+		}
+		return ans;
+	}
+
+    private List<MemoryCellController[]> OrangeGetPossible()
+	{
+		MemoryCellController[] grid = GridController.instance.GetGrid();
+
+		List<MemoryCellController[]> ans = new List<MemoryCellController[]>();
+        for (int i = 3 * 8; i < grid.Length - 5; i++)
+		{
+            for (int j = 2; j <= 5; j++)
+			{
+				bool value = All(grid, i, i + j + 1, (cell) => !cell.isColored);
+				if (value)
+					ans.Add(SubList(grid, i, i + j));
+			}
+		}
+		return ans;
+	}
+
+    private void PlaceScattered(bool singleValue)
+    {
+        MemoryCellController[] grid = GridController.instance.GetGrid();
+
+        int preValue = Random.Range(0, 15);
+        int number   = Random.Range(1, 3);
+        for (int i = 0; i < number; i++)
+        {
+            MemoryCellController cell = grid[Random.Range(16, grid.Length - 1)];
+            if (!cell.isColored)
+            {
+                MakeColor(cell, singleValue ? ColorTypes.PURPLE : ColorTypes.PINK);
+                SetValuePreview(cell, preValue);
+
+                if (!singleValue)
+                    preValue = Random.Range(0, 15);
+            }
+        }
+    }
+
     public void PlaceColors()
     {
+		foreach (KeyValuePair<ColorTypes, List<MemoryCellController>> pair in coloredCells)
+		{
+			ColorTypes type = pair.Key;
+			List<MemoryCellController> lst = pair.Value;
+            if (lst.Count == 0)
+			{
+                switch(type)
+				{
+					case ColorTypes.ORANGE:
+						List<MemoryCellController[]> possible = OrangeGetPossible();
+                        int choice = Random.Range(0, possible.Count - 1);
+                        MemoryCellController[] group = possible[choice];
 
-    }
+                        int value = Random.Range(0, 15);
+                        foreach(MemoryCellController cell in group)
+                        {
+                            MakeColor(cell, ColorTypes.ORANGE);
+                            SetValuePreview(cell, value);
+                        }
+                        break;
+					case ColorTypes.PURPLE:
+                        PlaceScattered(true);
+						break;
+					case ColorTypes.PINK:
+                        PlaceScattered(false);
+                        break;
+					case ColorTypes.YELLOW:
+						break;
+					case ColorTypes.LIGHT_BLUE:
+						break;
+				}
+			}
+		}
+
+	}
 
     public void CheckColoredCellStatus()
     {
@@ -126,6 +235,20 @@ public class JobController : MonoBehaviour {
                 multiplier += 1;
             }
         }
+    }
+
+    public void EraseColors()
+    {
+        foreach (ColorTypes type in colorTypesIter)
+        {
+            foreach (MemoryCellController cell in coloredCells[type])
+            {
+                cell.transform.Find("Normal").GetComponent<SpriteRenderer>().material = normal;
+                cell.isColored = false;
+                cell.SetPreviewNumberActivation(false);
+            }
+            coloredCells[type].Clear();
+        }                  
     }
 
     void Update () {

@@ -25,9 +25,9 @@
 - [x] On halt, red flash for incomplete, and lose money
 - [x] Add colors to JobController
 
-- [ ] Start button in bottom left
+- [x] Start button in bottom left
     - [ ] Free play prior to start button press
-    - [ ] Changes to End on press
+    - [x] Changes to End on press
     - [ ] End press gives you your final score
     - [ ] Click event places initial colored squares
 - [ ] Halt button in bottom right    

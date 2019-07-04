@@ -491,7 +491,7 @@ public class GameController : MonoBehaviour {
 
     private void EraseColors()
     {
-
+        JobController.instance.EraseColors();
     }
 
     public void OnStartButtonPress()

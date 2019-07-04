@@ -6,6 +6,7 @@ public class MemoryCellController : MonoBehaviour {
 
     public GameObject left;
     public GameObject right;
+    public bool isColored = false;
 
     private bool selected = false;
     private List<ICellListener> listeners;

@@ -1,13 +1,8 @@
 ﻿<Properties StartupConfiguration="{DB1FEA45-F47D-9CD1-1FFB-EC5522D71287}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/HaltController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/JobController.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameController.cs" Line="491" Column="1" />
-      <File FileName="Assets/Scripts/RegisterController.cs" Line="72" Column="1" />
-      <File FileName="Assets/Scripts/RegisterRetriever.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GridController.cs" Line="83" Column="1" />
-      <File FileName="Assets/Scripts/DotController.cs" Line="31" Column="10" />
-      <File FileName="Assets/StartButtonController.cs" Line="39" Column="27" />
-      <File FileName="Assets/HaltController.cs" Line="7" Column="16" />
+      <File FileName="Assets/Scripts/GameController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/JobController.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,8 +11,9 @@
             <Node name="Assets" expanded="True">
               <Node name="BuildScripts" expanded="True" />
               <Node name="Interfaces" expanded="True" />
-              <Node name="Scripts" expanded="True" />
-              <Node name="HaltController.cs" selected="True" />
+              <Node name="Scripts" expanded="True">
+                <Node name="JobController.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
@@ -26,7 +22,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6a6bacc5-a7ae-44cb-931d-ef17bc2d73e2" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="38d90a8b-e880-47cb-8a0f-8c130b0ba18e" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

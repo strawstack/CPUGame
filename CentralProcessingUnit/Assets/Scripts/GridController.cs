@@ -89,7 +89,12 @@ public class GridController : MonoBehaviour {
         }
     }
 
-    void Update () {
+    public MemoryCellController[] GetGrid()
+	{
+		return grid;
+	}
+
+	void Update () {
 		
 	}
 }
