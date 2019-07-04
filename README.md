@@ -24,17 +24,21 @@
 - [x] On halt, green flash for success, and money
 - [x] On halt, red flash for incomplete, and lose money
 - [x] Add colors to JobController
-
 - [x] Start button in bottom left
-    - [ ] Free play prior to start button press
-    - [x] Changes to End on press
-    - [ ] End press gives you your final score
-    - [ ] Click event places initial colored squares
-- [ ] Halt button in bottom right    
-    - [ ] Button only active when program running
-    - [ ] Halt fee is a percentage of your current money
+- [x] Changes to End on press
+- [x] Click event places initial colored squares
+- [x] Halt button in bottom right    
+
+- [ ] Free play prior to start button press
+- [ ] Halt button only active when program running
+- [ ] Halt fee is a percentage of your current money. Free if negative
 
 - [ ] Locked cells
-    - [ ] Manual write to locked cell should fail (no write to colored cell)
+- [ ] Manual write to locked cell should fail (no write to colored cell)
 - [ ] Prevent edit of cells during execution
-    - [ ] remove selected cell highlight during execution
+- [ ] Remove selected cell highlight during execution
+
+- [ ] Dust poof effect when colored cells appear
+- [ ] White flash on cell edit
+- [ ] Show player score on End
+- [ ] Implement placement of more cell colors
