@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartButtonController : MonoBehaviour {
+public class StartButtonController : MonoBehaviour, IButton
+{
 
     public static StartButtonController instance;
 

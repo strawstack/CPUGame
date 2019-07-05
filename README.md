@@ -27,18 +27,17 @@
 - [x] Start button in bottom left
 - [x] Changes to End on press
 - [x] Click event places initial colored squares
-- [x] Halt button in bottom right    
+- [x] Halt button in bottom right
+- [x] Free play prior to start button press
+- [x] Halt button only active when program running
+- [x] Halt fee is a percentage of your current money. Free if negative
+- [x] Locked cells
+- [x] Manual write to locked cell should fail (no write to colored cell)
+- [x] Prevent edit of cells during execution
+- [x] Remove selected cell highlight during execution
 
-- [ ] Free play prior to start button press
-- [ ] Halt button only active when program running
-- [ ] Halt fee is a percentage of your current money. Free if negative
-
-- [ ] Locked cells
-- [ ] Manual write to locked cell should fail (no write to colored cell)
-- [ ] Prevent edit of cells during execution
-- [ ] Remove selected cell highlight during execution
-
-- [ ] Dust poof effect when colored cells appear
+- [ ] Pause menu "p" to show instructions
+- [ ] Poof effect when colored cells appear
 - [ ] White flash on cell edit
 - [ ] Show player score on End
 - [ ] Implement placement of more cell colors

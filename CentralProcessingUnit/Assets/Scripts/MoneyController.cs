@@ -23,6 +23,7 @@ public class MoneyController : MonoBehaviour {
 
     void Start () {
         instance = this;
+        gameObject.SetActive(false);
     }
 
     private void SetMoney(float money)
@@ -85,7 +86,16 @@ public class MoneyController : MonoBehaviour {
         SetMoney(currentMoney);
     }
 
-	void Update () {
+    public void HaltRequest()
+    {
+        // lose 10% if positive
+        if (currentMoney > 0f)
+        {
+            ChangeMoney(-1 * 0.1f * currentMoney);
+        }        
+    }
+
+    void Update () {
 		
 	}
 }

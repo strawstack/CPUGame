@@ -6,7 +6,7 @@ public class MemoryCellController : MonoBehaviour {
 
     public GameObject left;
     public GameObject right;
-    public bool isColored = false;
+    public bool isColored = false;    
 
     private bool selected = false;
     private List<ICellListener> listeners;
@@ -23,6 +23,11 @@ public class MemoryCellController : MonoBehaviour {
     void Start()
     {
         keys = new string[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f" };
+    }
+
+    public bool IsLocked()
+    {
+        return isColored;
     }
 
     public void Flash(string animationName)
@@ -53,7 +58,7 @@ public class MemoryCellController : MonoBehaviour {
     
     public int GetValue()
     {
-        if (GameController.instance.isRunning)
+        if (GameController.instance.isRunning && GameController.instance.IsStarted())
             Flash("RedFlash");
         return GetComponent<MemoryCellTextController>().GetValue();
     }

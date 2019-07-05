@@ -1384,6 +1384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 342035681}
   right: {fileID: 514084171}
+  isColored: 0
 --- !u!4 &69183601
 Transform:
   m_ObjectHideFlags: 0
@@ -1728,6 +1729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 929347620}
   right: {fileID: 1064939400}
+  isColored: 0
 --- !u!1 &83623989
 GameObject:
   m_ObjectHideFlags: 0
@@ -2037,6 +2039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 642033890}
   right: {fileID: 1045029642}
+  isColored: 0
 --- !u!4 &93818451
 Transform:
   m_ObjectHideFlags: 0
@@ -2402,6 +2405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1851471710}
   right: {fileID: 821680219}
+  isColored: 0
 --- !u!4 &109401758
 Transform:
   m_ObjectHideFlags: 0
@@ -2682,6 +2686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 183383707}
   right: {fileID: 1384313146}
+  isColored: 0
 --- !u!4 &123695134
 Transform:
   m_ObjectHideFlags: 0
@@ -3526,6 +3531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 833959685}
   right: {fileID: 793643824}
+  isColored: 0
 --- !u!4 &163499587
 Transform:
   m_ObjectHideFlags: 0
@@ -3645,6 +3651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 2067329807}
   right: {fileID: 322885911}
+  isColored: 0
 --- !u!4 &164134486
 Transform:
   m_ObjectHideFlags: 0
@@ -3764,6 +3771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1773780675}
   right: {fileID: 1546544452}
+  isColored: 0
 --- !u!4 &164479967
 Transform:
   m_ObjectHideFlags: 0
@@ -4628,6 +4636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1821874401}
   right: {fileID: 123695128}
+  isColored: 0
 --- !u!4 &183383713
 Transform:
   m_ObjectHideFlags: 0
@@ -4765,6 +4774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 417737556}
   right: {fileID: 1070580230}
+  isColored: 0
 --- !u!1 &191603092
 GameObject:
   m_ObjectHideFlags: 0
@@ -5385,6 +5395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 380241813}
   right: {fileID: 1939339367}
+  isColored: 0
 --- !u!4 &230983353
 Transform:
   m_ObjectHideFlags: 0
@@ -6470,6 +6481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 286836370}
   right: {fileID: 933304888}
+  isColored: 0
 --- !u!4 &259164748
 Transform:
   m_ObjectHideFlags: 0
@@ -6889,6 +6901,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1679892444}
   right: {fileID: 1774232258}
+  isColored: 0
 --- !u!4 &274029677
 Transform:
   m_ObjectHideFlags: 0
@@ -7244,6 +7257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1459872653}
   right: {fileID: 259164742}
+  isColored: 0
 --- !u!4 &286836376
 Transform:
   m_ObjectHideFlags: 0
@@ -7955,6 +7969,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 164134480}
   right: {fileID: 1720098283}
+  isColored: 0
 --- !u!4 &322885917
 Transform:
   m_ObjectHideFlags: 0
@@ -8304,6 +8319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1149691584}
   right: {fileID: 1172730334}
+  isColored: 0
 --- !u!4 &333861269
 Transform:
   m_ObjectHideFlags: 0
@@ -8583,6 +8599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1070580230}
   right: {fileID: 69183595}
+  isColored: 0
 --- !u!4 &342035687
 Transform:
   m_ObjectHideFlags: 0
@@ -8863,6 +8880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1103634272}
   right: {fileID: 1447039697}
+  isColored: 0
 --- !u!4 &352387779
 Transform:
   m_ObjectHideFlags: 0
@@ -9293,6 +9311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 793643824}
   right: {fileID: 1011364703}
+  isColored: 0
 --- !u!4 &369247629
 Transform:
   m_ObjectHideFlags: 0
@@ -9659,6 +9678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1774232258}
   right: {fileID: 230983347}
+  isColored: 0
 --- !u!4 &380241819
 Transform:
   m_ObjectHideFlags: 0
@@ -10830,7 +10850,7 @@ TextMesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 415611171}
-  m_Text: $25
+  m_Text: -10%
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
@@ -10980,6 +11000,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1229588015}
   right: {fileID: 188768184}
+  isColored: 0
 --- !u!4 &417737562
 Transform:
   m_ObjectHideFlags: 0
@@ -11496,6 +11517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1291179179}
   right: {fileID: 899976256}
+  isColored: 0
 --- !u!4 &437049182
 Transform:
   m_ObjectHideFlags: 0
@@ -11690,6 +11712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1307643406}
   right: {fileID: 1851471710}
+  isColored: 0
 --- !u!4 &441105027
 Transform:
   m_ObjectHideFlags: 0
@@ -12614,6 +12637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 899976256}
   right: {fileID: 2092851710}
+  isColored: 0
 --- !u!4 &465009448
 Transform:
   m_ObjectHideFlags: 0
@@ -13330,6 +13354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1067689001}
   right: {fileID: 1518766545}
+  isColored: 0
 --- !u!4 &503985283
 Transform:
   m_ObjectHideFlags: 0
@@ -13610,6 +13635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 69183595}
   right: {fileID: 715323099}
+  isColored: 0
 --- !u!4 &514084177
 Transform:
   m_ObjectHideFlags: 0
@@ -19229,6 +19255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1903864417}
   right: {fileID: 1103634272}
+  isColored: 0
 --- !u!4 &565148025
 Transform:
   m_ObjectHideFlags: 0
@@ -20539,6 +20566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1939339367}
   right: {fileID: 1477026541}
+  isColored: 0
 --- !u!4 &606760597
 Transform:
   m_ObjectHideFlags: 0
@@ -21287,6 +21315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1416430897}
   right: {fileID: 1229588015}
+  isColored: 0
 --- !u!4 &634044293
 Transform:
   m_ObjectHideFlags: 0
@@ -21550,6 +21579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1892681651}
   right: {fileID: 93818446}
+  isColored: 0
 --- !u!4 &642033895
 Transform:
   m_ObjectHideFlags: 0
@@ -22556,6 +22586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 2121579830}
   right: {fileID: 1683147814}
+  isColored: 0
 --- !u!4 &675036435
 Transform:
   m_ObjectHideFlags: 0
@@ -22674,6 +22705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 715323099}
   right: {fileID: 1746173200}
+  isColored: 0
 --- !u!4 &675501207
 Transform:
   m_ObjectHideFlags: 0
@@ -23012,6 +23044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 825917369}
   right: {fileID: 2121579830}
+  isColored: 0
 --- !u!4 &684088145
 Transform:
   m_ObjectHideFlags: 0
@@ -23733,6 +23766,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 514084171}
   right: {fileID: 675501201}
+  isColored: 0
 --- !u!4 &715323105
 Transform:
   m_ObjectHideFlags: 0
@@ -30146,6 +30180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1683147814}
   right: {fileID: 1908200913}
+  isColored: 0
 --- !u!4 &777196637
 Transform:
   m_ObjectHideFlags: 0
@@ -30264,6 +30299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 890915800}
   right: {fileID: 1067689001}
+  isColored: 0
 --- !u!4 &778156063
 Transform:
   m_ObjectHideFlags: 0
@@ -30591,6 +30627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 895781822}
   right: {fileID: 2081657810}
+  isColored: 0
 --- !u!4 &785281721
 Transform:
   m_ObjectHideFlags: 0
@@ -30934,6 +30971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 163499581}
   right: {fileID: 369247623}
+  isColored: 0
 --- !u!4 &793643830
 Transform:
   m_ObjectHideFlags: 0
@@ -31428,6 +31466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 109401752}
   right: {fileID: 1006917519}
+  isColored: 0
 --- !u!4 &821680225
 Transform:
   m_ObjectHideFlags: 0
@@ -31605,6 +31644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1539260243}
   right: {fileID: 684088140}
+  isColored: 0
 --- !u!4 &825917374
 Transform:
   m_ObjectHideFlags: 0
@@ -32023,6 +32063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1964184628}
   right: {fileID: 163499581}
+  isColored: 0
 --- !u!4 &833959691
 Transform:
   m_ObjectHideFlags: 0
@@ -32932,6 +32973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 2102007192}
   right: {fileID: 1164050651}
+  isColored: 0
 --- !u!4 &873500853
 Transform:
   m_ObjectHideFlags: 0
@@ -33780,6 +33822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1399182976}
   right: {fileID: 778156057}
+  isColored: 0
 --- !u!4 &890915806
 Transform:
   m_ObjectHideFlags: 0
@@ -34043,6 +34086,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1045029642}
   right: {fileID: 785281716}
+  isColored: 0
 --- !u!4 &895781827
 Transform:
   m_ObjectHideFlags: 0
@@ -34236,6 +34280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 437049176}
   right: {fileID: 465009442}
+  isColored: 0
 --- !u!4 &899976262
 Transform:
   m_ObjectHideFlags: 0
@@ -34585,6 +34630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 2145775328}
   right: {fileID: 1067037329}
+  isColored: 0
 --- !u!4 &905257418
 Transform:
   m_ObjectHideFlags: 0
@@ -34703,6 +34749,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1084488218}
   right: {fileID: 1878004954}
+  isColored: 0
 --- !u!4 &907739310
 Transform:
   m_ObjectHideFlags: 0
@@ -35041,6 +35088,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1067037329}
   right: {fileID: 82999187}
+  isColored: 0
 --- !u!4 &929347625
 Transform:
   m_ObjectHideFlags: 0
@@ -35159,6 +35207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 259164742}
   right: {fileID: 1313018766}
+  isColored: 0
 --- !u!4 &933304894
 Transform:
   m_ObjectHideFlags: 0
@@ -37179,6 +37228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 821680219}
   right: {fileID: 1084488218}
+  isColored: 0
 --- !u!4 &1006917525
 Transform:
   m_ObjectHideFlags: 0
@@ -37373,6 +37423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 369247623}
   right: {fileID: 1416430897}
+  isColored: 0
 --- !u!4 &1011364709
 Transform:
   m_ObjectHideFlags: 0
@@ -38222,6 +38273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 93818446}
   right: {fileID: 895781822}
+  isColored: 0
 --- !u!4 &1045029647
 Transform:
   m_ObjectHideFlags: 0
@@ -38656,6 +38708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 82999187}
   right: {fileID: 2072977659}
+  isColored: 0
 --- !u!4 &1064939405
 Transform:
   m_ObjectHideFlags: 0
@@ -38843,6 +38896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 905257413}
   right: {fileID: 929347620}
+  isColored: 0
 --- !u!4 &1067037334
 Transform:
   m_ObjectHideFlags: 0
@@ -38962,6 +39016,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 778156057}
   right: {fileID: 503985277}
+  isColored: 0
 --- !u!4 &1067689007
 Transform:
   m_ObjectHideFlags: 0
@@ -39081,6 +39136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 188768184}
   right: {fileID: 342035681}
+  isColored: 0
 --- !u!4 &1070580236
 Transform:
   m_ObjectHideFlags: 0
@@ -39625,6 +39681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1006917519}
   right: {fileID: 907739304}
+  isColored: 0
 --- !u!4 &1084488224
 Transform:
   m_ObjectHideFlags: 0
@@ -40291,6 +40348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 565148019}
   right: {fileID: 352387773}
+  isColored: 0
 --- !u!4 &1103634278
 Transform:
   m_ObjectHideFlags: 0
@@ -41069,6 +41127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1755125543}
   right: {fileID: 2011835022}
+  isColored: 0
 --- !u!4 &1138381147
 Transform:
   m_ObjectHideFlags: 0
@@ -41406,6 +41465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1486020532}
   right: {fileID: 333861264}
+  isColored: 0
 --- !u!4 &1149691589
 Transform:
   m_ObjectHideFlags: 0
@@ -41668,6 +41728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 873500848}
   right: {fileID: 1755125543}
+  isColored: 0
 --- !u!4 &1164050656
 Transform:
   m_ObjectHideFlags: 0
@@ -41994,6 +42055,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 333861264}
   right: {fileID: 1892681651}
+  isColored: 0
 --- !u!4 &1172730339
 Transform:
   m_ObjectHideFlags: 0
@@ -42112,6 +42174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1844177791}
   right: {fileID: 1800741711}
+  isColored: 0
 --- !u!4 &1177481433
 Transform:
   m_ObjectHideFlags: 0
@@ -42542,6 +42605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1999373308}
   right: {fileID: 1399182976}
+  isColored: 0
 --- !u!4 &1197966613
 Transform:
   m_ObjectHideFlags: 0
@@ -43208,6 +43272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 2039349107}
   right: {fileID: 1499988848}
+  isColored: 0
 --- !u!4 &1220062164
 Transform:
   m_ObjectHideFlags: 0
@@ -43404,6 +43469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 634044287}
   right: {fileID: 417737556}
+  isColored: 0
 --- !u!4 &1229588021
 Transform:
   m_ObjectHideFlags: 0
@@ -44939,6 +45005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1746173200}
   right: {fileID: 1307643406}
+  isColored: 0
 --- !u!4 &1290692811
 Transform:
   m_ObjectHideFlags: 0
@@ -45058,6 +45125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1499988848}
   right: {fileID: 437049176}
+  isColored: 0
 --- !u!4 &1291179185
 Transform:
   m_ObjectHideFlags: 0
@@ -45338,6 +45406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1290692805}
   right: {fileID: 441105021}
+  isColored: 0
 --- !u!4 &1307643412
 Transform:
   m_ObjectHideFlags: 0
@@ -45682,6 +45751,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 933304888}
   right: {fileID: 2008882267}
+  isColored: 0
 --- !u!4 &1313018772
 Transform:
   m_ObjectHideFlags: 0
@@ -47587,6 +47657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 123695128}
   right: {fileID: 1964184628}
+  isColored: 0
 --- !u!4 &1384313152
 Transform:
   m_ObjectHideFlags: 0
@@ -47968,6 +48039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1197966607}
   right: {fileID: 890915800}
+  isColored: 0
 --- !u!4 &1399182982
 Transform:
   m_ObjectHideFlags: 0
@@ -48162,6 +48234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1011364703}
   right: {fileID: 634044287}
+  isColored: 0
 --- !u!4 &1416430903
 Transform:
   m_ObjectHideFlags: 0
@@ -49151,6 +49224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 352387773}
   right: {fileID: 1679892444}
+  isColored: 0
 --- !u!4 &1447039703
 Transform:
   m_ObjectHideFlags: 0
@@ -49489,6 +49563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 2081657810}
   right: {fileID: 2145775328}
+  isColored: 0
 --- !u!4 &1449200390
 Transform:
   m_ObjectHideFlags: 0
@@ -49951,6 +50026,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1546544452}
   right: {fileID: 286836370}
+  isColored: 0
 --- !u!4 &1459872659
 Transform:
   m_ObjectHideFlags: 0
@@ -50370,6 +50446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 606760591}
   right: {fileID: 1844177791}
+  isColored: 0
 --- !u!4 &1477026547
 Transform:
   m_ObjectHideFlags: 0
@@ -51041,6 +51118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 2011835022}
   right: {fileID: 1149691584}
+  isColored: 0
 --- !u!4 &1486020537
 Transform:
   m_ObjectHideFlags: 0
@@ -51159,6 +51237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1220062158}
   right: {fileID: 1291179179}
+  isColored: 0
 --- !u!4 &1499988854
 Transform:
   m_ObjectHideFlags: 0
@@ -51825,6 +51904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 503985277}
   right: {fileID: 1903864417}
+  isColored: 0
 --- !u!4 &1518766551
 Transform:
   m_ObjectHideFlags: 0
@@ -52443,6 +52523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1574671025}
   right: {fileID: 825917369}
+  isColored: 0
 --- !u!4 &1539260248
 Transform:
   m_ObjectHideFlags: 0
@@ -52711,6 +52792,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 164479961}
   right: {fileID: 1459872653}
+  isColored: 0
 --- !u!4 &1546544458
 Transform:
   m_ObjectHideFlags: 0
@@ -53660,6 +53742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1866900669}
   right: {fileID: 1539260243}
+  isColored: 0
 --- !u!4 &1574671030
 Transform:
   m_ObjectHideFlags: 0
@@ -54508,6 +54591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1923843564}
   right: {fileID: 1773780675}
+  isColored: 0
 --- !u!4 &1617055587
 Transform:
   m_ObjectHideFlags: 0
@@ -56112,6 +56196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1447039697}
   right: {fileID: 274029671}
+  isColored: 0
 --- !u!4 &1679892450
 Transform:
   m_ObjectHideFlags: 0
@@ -56214,6 +56299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 675036430}
   right: {fileID: 777196632}
+  isColored: 0
 --- !u!4 &1683147819
 Transform:
   m_ObjectHideFlags: 0
@@ -57126,6 +57212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 322885911}
   right: {fileID: 1983770562}
+  isColored: 0
 --- !u!4 &1720098289
 Transform:
   m_ObjectHideFlags: 0
@@ -58103,6 +58190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 675501201}
   right: {fileID: 1290692805}
+  isColored: 0
 --- !u!4 &1746173206
 Transform:
   m_ObjectHideFlags: 0
@@ -58602,6 +58690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1164050651}
   right: {fileID: 1138381142}
+  isColored: 0
 --- !u!4 &1755125548
 Transform:
   m_ObjectHideFlags: 0
@@ -58709,7 +58798,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1758880124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58718,7 +58807,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1758880123}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54c45bf5eee58404c9448df69c6de343, type: 3}
+  m_Script: {fileID: 11500000, guid: f21345f13bdc24aeaacea2357fb52c51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   price: {fileID: 415611173}
@@ -59216,6 +59305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1617055581}
   right: {fileID: 164479961}
+  isColored: 0
 --- !u!4 &1773780681
 Transform:
   m_ObjectHideFlags: 0
@@ -59410,6 +59500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 274029671}
   right: {fileID: 380241813}
+  isColored: 0
 --- !u!4 &1774232264
 Transform:
   m_ObjectHideFlags: 0
@@ -60098,6 +60189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1177481427}
   right: {fileID: 1821874401}
+  isColored: 0
 --- !u!4 &1800741717
 Transform:
   m_ObjectHideFlags: 0
@@ -60539,6 +60631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1800741711}
   right: {fileID: 183383707}
+  isColored: 0
 --- !u!4 &1821874407
 Transform:
   m_ObjectHideFlags: 0
@@ -60641,6 +60734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 2072977659}
   right: {fileID: 1866900669}
+  isColored: 0
 --- !u!4 &1825855600
 Transform:
   m_ObjectHideFlags: 0
@@ -61348,6 +61442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1477026541}
   right: {fileID: 1177481427}
+  isColored: 0
 --- !u!4 &1844177797
 Transform:
   m_ObjectHideFlags: 0
@@ -61639,6 +61734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 441105021}
   right: {fileID: 109401752}
+  isColored: 0
 --- !u!4 &1851471716
 Transform:
   m_ObjectHideFlags: 0
@@ -61902,6 +61998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1825855595}
   right: {fileID: 1574671025}
+  isColored: 0
 --- !u!4 &1866900674
 Transform:
   m_ObjectHideFlags: 0
@@ -62344,6 +62441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 907739304}
   right: {fileID: 2067329807}
+  isColored: 0
 --- !u!4 &1878004960
 Transform:
   m_ObjectHideFlags: 0
@@ -62854,6 +62952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1172730334}
   right: {fileID: 642033890}
+  isColored: 0
 --- !u!4 &1892681656
 Transform:
   m_ObjectHideFlags: 0
@@ -63340,6 +63439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1518766545}
   right: {fileID: 565148019}
+  isColored: 0
 --- !u!4 &1903864423
 Transform:
   m_ObjectHideFlags: 0
@@ -63442,6 +63542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 777196632}
   right: {fileID: 2102007192}
+  isColored: 0
 --- !u!4 &1908200918
 Transform:
   m_ObjectHideFlags: 0
@@ -63721,6 +63822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 2092851710}
   right: {fileID: 1617055581}
+  isColored: 0
 --- !u!4 &1923843570
 Transform:
   m_ObjectHideFlags: 0
@@ -64398,6 +64500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 230983347}
   right: {fileID: 606760591}
+  isColored: 0
 --- !u!4 &1939339373
 Transform:
   m_ObjectHideFlags: 0
@@ -65053,6 +65156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1384313146}
   right: {fileID: 833959685}
+  isColored: 0
 --- !u!4 &1964184634
 Transform:
   m_ObjectHideFlags: 0
@@ -65494,6 +65598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1720098283}
   right: {fileID: 2039349107}
+  isColored: 0
 --- !u!4 &1983770568
 Transform:
   m_ObjectHideFlags: 0
@@ -66074,6 +66179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 2008882267}
   right: {fileID: 1197966607}
+  isColored: 0
 --- !u!4 &1999373314
 Transform:
   m_ObjectHideFlags: 0
@@ -66429,6 +66535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1313018766}
   right: {fileID: 1999373308}
+  isColored: 0
 --- !u!4 &2008882273
 Transform:
   m_ObjectHideFlags: 0
@@ -66531,6 +66638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1138381142}
   right: {fileID: 1486020532}
+  isColored: 0
 --- !u!4 &2011835027
 Transform:
   m_ObjectHideFlags: 0
@@ -67240,6 +67348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1983770562}
   right: {fileID: 1220062158}
+  isColored: 0
 --- !u!4 &2039349113
 Transform:
   m_ObjectHideFlags: 0
@@ -68174,6 +68283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1878004954}
   right: {fileID: 164134480}
+  isColored: 0
 --- !u!4 &2067329813
 Transform:
   m_ObjectHideFlags: 0
@@ -68362,6 +68472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1064939400}
   right: {fileID: 1825855595}
+  isColored: 0
 --- !u!4 &2072977664
 Transform:
   m_ObjectHideFlags: 0
@@ -68613,6 +68724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 785281716}
   right: {fileID: 1449200385}
+  isColored: 0
 --- !u!4 &2081657815
 Transform:
   m_ObjectHideFlags: 0
@@ -68956,6 +69068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 465009442}
   right: {fileID: 1923843564}
+  isColored: 0
 --- !u!4 &2092851716
 Transform:
   m_ObjectHideFlags: 0
@@ -69267,6 +69380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1908200913}
   right: {fileID: 873500848}
+  isColored: 0
 --- !u!4 &2102007197
 Transform:
   m_ObjectHideFlags: 0
@@ -69776,6 +69890,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 684088140}
   right: {fileID: 675036430}
+  isColored: 0
 --- !u!4 &2121579835
 Transform:
   m_ObjectHideFlags: 0
@@ -70394,3 +70509,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1449200385}
   right: {fileID: 905257413}
+  isColored: 0

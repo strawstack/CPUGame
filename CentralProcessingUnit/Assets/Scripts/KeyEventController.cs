@@ -14,6 +14,7 @@ public class KeyEventController : MonoBehaviour {
         if (Input.GetMouseButtonUp(0))
         {
             StartButtonController.instance.OnClick();
+            HaltButtonController.instance.OnClick();
         }
 
         if (Input.GetKeyDown("right"))
@@ -34,15 +35,12 @@ public class KeyEventController : MonoBehaviour {
         }
         else if (Input.GetKeyDown("return"))
         {
-            if (GameController.instance.isRunning)
-            {
-                GameController.instance.haltFlag = true;
-            }
-            else
+            if (!GameController.instance.isRunning)
             {
                 GameController.instance.isRunning = true;
+                GameController.instance.ClearHoverAndSelection();
                 StartCoroutine(GameController.instance.RunSingleCommand());
-            }            
+            }
         }
         else
         {

@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum StartState
+{
+    FreePlay,
+    Starting,
+    Started,
+    Ending
+}
+
 public class GameController : MonoBehaviour {
 
     public static GameController instance;
@@ -15,12 +23,15 @@ public class GameController : MonoBehaviour {
     private Dictionary<int, Instruction> instructionLookup;
     private delegate IEnumerator Instruction(int arg);
     private StartState startState = StartState.FreePlay;
-    private enum StartState
+
+    public StartState GetStartState()
     {
-        FreePlay,
-        Starting,
-        Started,
-        Ending
+        return startState;
+    }
+
+    public bool IsStarted()
+    {
+        return startState == StartState.Started;
     }
 
     void Awake () {
@@ -352,6 +363,17 @@ public class GameController : MonoBehaviour {
         currentHover = hover;
     }
 
+    public void ClearHoverAndSelection()
+    {
+        if (currentHover != null)
+            currentHover.GetComponent<ISelectable>().OnHoverOut();
+        currentHover = null;
+        
+        if (currentSelection != null)
+            currentSelection.GetComponent<ISelectable>().OnUnSelect();
+        currentSelection = null;
+    }
+
     public void OnClick()
     {
         // There is a current hover
@@ -371,11 +393,21 @@ public class GameController : MonoBehaviour {
         {
             if (value == "right")
             {
-                currentSelection.GetComponent<MemoryCellController>().right.GetComponent<ISelectable>().OnSelect();
+                // move right until unlocked cell found
+                GameObject cur = currentSelection;
+                cur = currentSelection.GetComponent<MemoryCellController>().right;
+                while (cur.GetComponent<MemoryCellController>().IsLocked())
+                    cur = cur.GetComponent<MemoryCellController>().right;
+                cur.GetComponent<MemoryCellController>().GetComponent<ISelectable>().OnSelect();
             }
             else // value == "left"
             {
-                currentSelection.GetComponent<MemoryCellController>().left.GetComponent<ISelectable>().OnSelect();
+                // move left until unlocked cell found
+                GameObject cur = currentSelection;
+                cur = currentSelection.GetComponent<MemoryCellController>().left;
+                while (cur.GetComponent<MemoryCellController>().IsLocked())
+                    cur = cur.GetComponent<MemoryCellController>().left;
+                cur.GetComponent<MemoryCellController>().GetComponent<ISelectable>().OnSelect();
             }
         }
     }
@@ -397,7 +429,9 @@ public class GameController : MonoBehaviour {
     }
 
     public IEnumerator RunSingleCommand()
-    {   
+    {
+        HaltButtonController.instance.gameObject.SetActive(true);
+
         // Register input
         Debug.Log("Wait");
         yield return new WaitForSeconds(GameController.instance.moveSpeed);
@@ -457,9 +491,10 @@ public class GameController : MonoBehaviour {
         {
             haltFlag  = false;
             isRunning = false;
+            HaltButtonController.instance.gameObject.SetActive(false); // hide the halt button
             JobController.instance.CheckColoredCellStatus();
-
-            // TODO - if something was completed maybe place a new one?
+            if (startState == StartState.Started)
+                JobController.instance.PlaceColors(); // place new colors
         }
         else
         {
@@ -504,12 +539,14 @@ public class GameController : MonoBehaviour {
                 PlaceColors();
                 startState = StartState.Started;
                 StartButtonController.instance.OnStart();
+                MoneyController.instance.gameObject.SetActive(true);
                 break;           
             case StartState.Started:
                 startState = StartState.Ending;
                 ZeroizeGrid();
                 EraseColors();
                 // TODO - Show the player their score
+                MoneyController.instance.gameObject.SetActive(false);
                 StartButtonController.instance.OnEnd();
                 startState = StartState.FreePlay;
                 break;

@@ -62,7 +62,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\BuildScripts\BuildController.cs" />
-    <Compile Include="Assets\HaltController.cs" />
+    <Compile Include="Assets\HaltButtonController.cs" />
+    <Compile Include="Assets\Interfaces\IButton.cs" />
     <Compile Include="Assets\Interfaces\ICellListener.cs" />
     <Compile Include="Assets\Interfaces\ISelectable.cs" />
     <Compile Include="Assets\Scripts\ClickController.cs" />

@@ -13,12 +13,15 @@ public class MouseColliderController : MonoBehaviour {
     {
         if (collision.tag == "MemoryCell" || collision.tag == "GridMemoryCell")
         {
-            collision.gameObject.GetComponent<ISelectable>().OnHoverOver();
-            GameController.instance.OnHoverChange(collision.gameObject);
+            if (!GameController.instance.isRunning && !collision.gameObject.GetComponent<MemoryCellController>().IsLocked())
+            {
+                collision.gameObject.GetComponent<ISelectable>().OnHoverOver();
+                GameController.instance.OnHoverChange(collision.gameObject);
+            }
         }
         if (collision.tag == "Button")
         {
-            StartButtonController.instance.SetBackgroundActive(true);
+            collision.gameObject.transform.parent.gameObject.GetComponent<IButton>().SetBackgroundActive(true);            
         }
     }
 
@@ -26,12 +29,15 @@ public class MouseColliderController : MonoBehaviour {
     {
         if (collision.tag == "MemoryCell" || collision.tag == "GridMemoryCell")
         {
-            collision.gameObject.GetComponent<ISelectable>().OnHoverOut();
-            GameController.instance.OnHoverChange(null);
+            if (!GameController.instance.isRunning && !collision.gameObject.GetComponent<MemoryCellController>().IsLocked())
+            {
+                collision.gameObject.GetComponent<ISelectable>().OnHoverOut();
+                GameController.instance.OnHoverChange(null);
+            }            
         }
         if (collision.tag == "Button")
         {
-            StartButtonController.instance.SetBackgroundActive(false);
+            collision.gameObject.transform.parent.gameObject.GetComponent<IButton>().SetBackgroundActive(false);
         }
     }
 
