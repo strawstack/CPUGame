@@ -84,6 +84,14 @@ public class MoneyController : MonoBehaviour {
 
         currentMoney += value;
         SetMoney(currentMoney);
+        HaltButtonController.instance.ShowPrice(currentMoney > 0);
+    }
+
+    public void ResetMoney()
+    {
+        currentMoney = 100f;
+        SetMoney(currentMoney);
+        HaltButtonController.instance.ShowPrice(true);
     }
 
     public void HaltRequest()

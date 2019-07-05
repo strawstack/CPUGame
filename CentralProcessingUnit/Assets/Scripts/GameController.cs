@@ -547,6 +547,7 @@ public class GameController : MonoBehaviour {
                 EraseColors();
                 // TODO - Show the player their score
                 MoneyController.instance.gameObject.SetActive(false);
+                MoneyController.instance.ResetMoney();
                 StartButtonController.instance.OnEnd();
                 startState = StartState.FreePlay;
                 break;

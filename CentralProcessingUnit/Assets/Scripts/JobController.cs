@@ -96,7 +96,8 @@ public class JobController : MonoBehaviour {
         foreach (MemoryCellController cell in coloredCells[type])
         {
             cell.transform.Find("Normal").GetComponent<SpriteRenderer>().material = normal;
-			cell.isColored = false;
+            cell.SetPreviewNumberActivation(false);
+            cell.isColored = false;
 			cell.Flash("GreenFlash");            
         }
         MoneyController.instance.OnChangeRequest(TransactionType.COMPLETE, coloredCells[type].Count * multiplier);

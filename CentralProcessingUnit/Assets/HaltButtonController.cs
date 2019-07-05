@@ -32,6 +32,11 @@ public class HaltButtonController : MonoBehaviour, IButton
         }
     }
 
+    public void ShowPrice(bool value)
+    {
+        price.gameObject.SetActive(value);
+    }
+
     public void OnClick()
     {
         if (hover && !GameController.instance.haltFlag)
