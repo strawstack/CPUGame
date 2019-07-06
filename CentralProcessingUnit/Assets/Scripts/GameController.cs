@@ -361,6 +361,8 @@ public class GameController : MonoBehaviour {
     public void OnHoverChange(GameObject hover)
     {
         currentHover = hover;
+        if (currentHover != null)
+            HoverController.instance.SetValue(currentHover.GetComponent<MemoryCellController>().gridNumber);
     }
 
     public void ClearHoverAndSelection()
@@ -372,6 +374,8 @@ public class GameController : MonoBehaviour {
         if (currentSelection != null)
             currentSelection.GetComponent<ISelectable>().OnUnSelect();
         currentSelection = null;
+
+        HoverController.instance.SetValue(0);
     }
 
     public void OnClick()

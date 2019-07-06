@@ -6,6 +6,7 @@ public class BuildController : MonoBehaviour {
 
     public GameObject memoryCell;
     public GameObject previewText;
+    public MemoryCellController firstCell;
 
     private float columnGap = 1.2f;
     private float rowGap    = -1.2f;
@@ -23,8 +24,24 @@ public class BuildController : MonoBehaviour {
     {
         if (Input.GetKeyDown("m"))
         {            
-            PlacePreviewText();
+            NumberGridCells();
         }    
+    }
+
+    private void NumberGridCells()
+    {
+        int number = 80;
+        int gridNumber = 0;
+
+        MemoryCellController cur = firstCell;
+
+        while (number > 0)
+        {
+            cur.gridNumber = gridNumber;
+            number -= 1;
+            gridNumber += 1;
+            cur = cur.right.GetComponent<MemoryCellController>();
+        }
     }
 
     private void PlacePreviewText()
