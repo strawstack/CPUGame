@@ -17,7 +17,12 @@ public class KeyEventController : MonoBehaviour {
             HaltButtonController.instance.OnClick();
         }
 
-        if (Input.GetKeyDown("right"))
+        if (Input.GetKeyDown("p"))
+        {
+            HelpController.instance.isOpen = !HelpController.instance.isOpen;
+            HelpController.instance.gameObject.SetActive(HelpController.instance.isOpen);
+        }
+        else if (Input.GetKeyDown("right"))
         {
             GameController.instance.OnNavigation("right");
         }

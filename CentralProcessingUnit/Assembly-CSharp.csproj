@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\BuildScripts\BuildController.cs" />
     <Compile Include="Assets\HaltButtonController.cs" />
+    <Compile Include="Assets\HelpController.cs" />
     <Compile Include="Assets\HoverController.cs" />
     <Compile Include="Assets\Interfaces\IButton.cs" />
     <Compile Include="Assets\Interfaces\ICellListener.cs" />
