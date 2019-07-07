@@ -35,9 +35,9 @@
 - [x] Manual write to locked cell should fail (no write to colored cell)
 - [x] Prevent edit of cells during execution
 - [x] Remove selected cell highlight during execution
+- [x] Pause menu "p" to show instructions
 
-- [ ] Pause menu "p" to show instructions
+- [ ] Show player score on End
 - [ ] Poof effect when colored cells appear
 - [ ] White flash on cell edit
-- [ ] Show player score on End
 - [ ] Implement placement of more cell colors

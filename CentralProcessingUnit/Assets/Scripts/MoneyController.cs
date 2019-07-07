@@ -42,7 +42,7 @@ public class MoneyController : MonoBehaviour {
         }
     }
 
-    private float GetValue()
+    public float GetValue()
     {
         return currentMoney;
     }

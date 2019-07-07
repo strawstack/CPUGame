@@ -1,9 +1,11 @@
 ﻿<Properties StartupConfiguration="{DB1FEA45-F47D-9CD1-1FFB-EC5522D71287}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/KeyEventController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/ScoreController.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameController.cs" Line="365" Column="109" />
-      <File FileName="Assets/HelpController.cs" Line="11" Column="1" />
-      <File FileName="Assets/Scripts/KeyEventController.cs" Line="20" Column="9" />
+      <File FileName="Assets/Scripts/GameController.cs" Line="556" Column="48" />
+      <File FileName="Assets/HelpController.cs" Line="13" Column="37" />
+      <File FileName="Assets/Scripts/KeyEventController.cs" />
+      <File FileName="Assets/ScoreController.cs" Line="24" Column="69" />
+      <File FileName="Assets/Scripts/MoneyController.cs" Line="45" Column="27" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,9 +14,8 @@
             <Node name="Assets" expanded="True">
               <Node name="BuildScripts" expanded="True" />
               <Node name="Interfaces" expanded="True" />
-              <Node name="Scripts" expanded="True">
-                <Node name="KeyEventController.cs" selected="True" />
-              </Node>
+              <Node name="Scripts" expanded="True" />
+              <Node name="ScoreController.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -23,7 +24,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6340d90b-0f1f-4a9a-8c41-db0c6cc5bf9c" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6ee27069-bc5c-4195-84e1-cc4dab440a34" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

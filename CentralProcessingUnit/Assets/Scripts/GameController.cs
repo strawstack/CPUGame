@@ -548,12 +548,17 @@ public class GameController : MonoBehaviour {
             case StartState.Started:
                 startState = StartState.Ending;
                 ZeroizeGrid();
-                EraseColors();
-                // TODO - Show the player their score
-                MoneyController.instance.gameObject.SetActive(false);
-                MoneyController.instance.ResetMoney();
+                EraseColors();                
+                MoneyController.instance.gameObject.SetActive(false);                
                 StartButtonController.instance.OnEnd();
-                startState = StartState.FreePlay;
+
+                // Show the score for some time
+                // and switch state when done
+                StartCoroutine(ScoreController.instance.ShowScore(() =>
+                {
+                    startState = StartState.FreePlay;
+                    MoneyController.instance.ResetMoney();
+                }));
                 break;
             case StartState.Starting:
             case StartState.Ending:
