@@ -40,7 +40,7 @@ public class KeyEventController : MonoBehaviour {
         }
         else if (Input.GetKeyDown("return"))
         {
-            if (!GameController.instance.isRunning)
+            if (!GameController.instance.isRunning && GameController.instance.GetStartState() != StartState.Ending)
             {
                 GameController.instance.isRunning = true;
                 GameController.instance.ClearHoverAndSelection();

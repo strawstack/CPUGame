@@ -8,6 +8,7 @@ public class RegisterRetriever : MonoBehaviour {
 
     public LineRenderer hLine;
     public LineRenderer vLine;
+    public GameObject whiteFlash;
 
     void Start () {
         instance = this;
@@ -85,6 +86,7 @@ public class RegisterRetriever : MonoBehaviour {
         foreach (MemoryCellController cell in cells)
         {
             yield return StartCoroutine(NavToLocation(cell.gameObject.transform.position, GameController.instance.readSpeed));
+            Instantiate(whiteFlash, cell.transform.position, Quaternion.identity);
             yield return new WaitForSeconds(GameController.instance.readSpeed);
         }
     }
@@ -98,8 +100,9 @@ public class RegisterRetriever : MonoBehaviour {
         foreach (MemoryCellController cell in cells)
         {
             yield return StartCoroutine(NavToLocation(cell.gameObject.transform.position, GameController.instance.readSpeed));
+            Instantiate(whiteFlash, cell.transform.position, Quaternion.identity);
             cell.SetValue( ((power & value) > 0)? 1 : 0 );
-            power >>= 1;
+            power >>= 1;            
             yield return new WaitForSeconds(GameController.instance.readSpeed);
         }
     }

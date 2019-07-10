@@ -36,8 +36,10 @@
 - [x] Prevent edit of cells during execution
 - [x] Remove selected cell highlight during execution
 - [x] Pause menu "p" to show instructions
+- [x] Show player score on End
+- [x] FIX: disable pressing end when process is executing
+- [x] FIX: disable controls when in the ending state
+- [x] Spark effect when colored cells appear
+- [x] White flash on cell edit
 
-- [ ] Show player score on End
-- [ ] Poof effect when colored cells appear
-- [ ] White flash on cell edit
-- [ ] Implement placement of more cell colors
+- [?] Implement placement of more cell colors

@@ -24,6 +24,7 @@ public class JobController : MonoBehaviour {
     public Material yellow;     // multiple cells incrementing value
 	public Material light_blue; // vertical list
 	public Material dark_blue;  // single value
+    public GameObject sparks;
 
 	private delegate bool Condition(MemoryCellController cell);
     private Dictionary<ColorTypes, List<MemoryCellController>> coloredCells;
@@ -59,6 +60,7 @@ public class JobController : MonoBehaviour {
         coloredCells[type].Add(cell);
         cell.transform.Find("Normal").GetComponent<SpriteRenderer>().material = materialLookup[type];
         cell.isColored = true;
+        Instantiate(sparks, cell.transform.position, Quaternion.identity);
     }
 
     public void SetValuePreview(int row, int col, int value)

@@ -4498,6 +4498,7 @@ MonoBehaviour:
   yellow: {fileID: 2100000, guid: 02a09104d079b4e44b72e0bc4659b46e, type: 2}
   light_blue: {fileID: 2100000, guid: 8569f8bdb128f409d9210de9bece83d4, type: 2}
   dark_blue: {fileID: 2100000, guid: c73f1063957fe4828ba472832f20d1d1, type: 2}
+  sparks: {fileID: 1447833041897926, guid: b63504506ccca440c8f1e7eb8faef75e, type: 2}
 --- !u!1 &206952736
 GameObject:
   m_ObjectHideFlags: 0
@@ -13923,7 +13924,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 57313830961574e9690ad2624dfd2c31, type: 2}
+  - {fileID: 2100000, guid: dee3d7b3e65694f7e892db42f42a9f57, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -20660,6 +20661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hLine: {fileID: 177726387}
   vLine: {fileID: 44324293}
+  whiteFlash: {fileID: 1180278086007416, guid: 62583342aa6544e2fb86bd2876ad4a6e, type: 2}
 --- !u!4 &610430223
 Transform:
   m_ObjectHideFlags: 0
@@ -26121,7 +26123,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 57313830961574e9690ad2624dfd2c31, type: 2}
+  - {fileID: 2100000, guid: dee3d7b3e65694f7e892db42f42a9f57, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -36857,6 +36859,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hLine: {fileID: 2093418439}
   vLine: {fileID: 1673028982}
+  whiteFlash: {fileID: 1180278086007416, guid: 62583342aa6544e2fb86bd2876ad4a6e, type: 2}
 --- !u!1 &950109167
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class MemoryRetriever : MonoBehaviour
 
     public LineRenderer hLine;
     public LineRenderer vLine;
+    public GameObject whiteFlash;
 
     void Start()
     {
@@ -86,6 +87,7 @@ public class MemoryRetriever : MonoBehaviour
         foreach (MemoryCellController cell in cells)
         {
             yield return StartCoroutine(NavToLocation(cell.gameObject.transform.position, GameController.instance.readSpeed));
+            Instantiate(whiteFlash, cell.transform.position, Quaternion.identity);
             yield return new WaitForSeconds(GameController.instance.readSpeed);
         }
     }
@@ -108,6 +110,7 @@ public class MemoryRetriever : MonoBehaviour
             yield return StartCoroutine(NavToLocation(cell.gameObject.transform.position, GameController.instance.readSpeed));
 
             // place value in cell
+            Instantiate(whiteFlash, cell.transform.position, Quaternion.identity);
             cell.SetValue(v);            
             yield return new WaitForSeconds(GameController.instance.readSpeed);
         }

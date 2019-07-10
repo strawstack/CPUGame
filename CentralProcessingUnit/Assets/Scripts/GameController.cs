@@ -435,6 +435,7 @@ public class GameController : MonoBehaviour {
     public IEnumerator RunSingleCommand()
     {
         HaltButtonController.instance.gameObject.SetActive(true);
+        StartButtonController.instance.gameObject.SetActive(false);
 
         // Register input
         Debug.Log("Wait");
@@ -499,6 +500,7 @@ public class GameController : MonoBehaviour {
             JobController.instance.CheckColoredCellStatus();
             if (startState == StartState.Started)
                 JobController.instance.PlaceColors(); // place new colors
+            StartButtonController.instance.gameObject.SetActive(true);
         }
         else
         {
