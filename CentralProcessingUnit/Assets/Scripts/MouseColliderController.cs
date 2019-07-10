@@ -18,6 +18,10 @@ public class MouseColliderController : MonoBehaviour {
                 collision.gameObject.GetComponent<ISelectable>().OnHoverOver();
                 GameController.instance.OnHoverChange(collision.gameObject);
             }
+            else if(collision.gameObject.GetComponent<MemoryCellController>().IsLocked())
+            {
+                HoverController.instance.SetValue(collision.gameObject.GetComponent<MemoryCellController>().gridNumber);
+            }
         }
         if (collision.tag == "Button")
         {
