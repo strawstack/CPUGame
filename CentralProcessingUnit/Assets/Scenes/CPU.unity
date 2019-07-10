@@ -73968,7 +73968,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1980535339}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.77, y: 8.22, z: -4}
+  m_LocalPosition: {x: -13.59, y: 8.22, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 215862498}
@@ -73982,8 +73982,13 @@ TextMesh:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1980535339}
   m_Text: "Instc    Hex   Name    Details\n0000   0        ADD     A + B => A\n0001
-    \  1      \n0010   2\n0011   3\n0100   4\n0101   5\n0110   6\n0111   7\n1000   8\n1001
-    \  9\n1010   A\n1011   B\n1100   C\n1101   D\n1110   E\n1111   F"
+    \  1        SUB     A  - B => A\n0010   2        MUL     A * B => A\n0011   3
+    \       BEQ     Bra if A = 0\n0100   4        BLT      Bra if A < 0\n0101   5
+    \       BGT     Bra if A > 0\n0110   6        EMPTY\n0111   7        EMPTY\n1000
+    \  8        ADDi      A + _R => A \n1001   9        SUBi      A - _R => A\n1010
+    \  A        MULi     A * _R => A\n1011   B        BEQ      Bra to A if m[_R]=0\n1100
+    \  C        STAA     A => m[_R]\n1101   D        LDA       m[_R] => A\n1110   E
+    \        LDB      m[_R] => B\n1111   F         HALT"
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
