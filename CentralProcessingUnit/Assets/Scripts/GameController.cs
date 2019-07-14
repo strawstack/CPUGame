@@ -524,8 +524,11 @@ public class GameController : MonoBehaviour {
             if (startState == StartState.Started)
                 JobController.instance.PlaceColors(); // place new colors
             StartButtonController.instance.gameObject.SetActive(true);
-            RandomButtonController.instance.gameObject.SetActive(true);
-            ClearButtonController.instance.gameObject.SetActive(true);
+            if (startState == StartState.FreePlay)
+            {
+                RandomButtonController.instance.gameObject.SetActive(true);
+                ClearButtonController.instance.gameObject.SetActive(true);
+            }            
         }
         else
         {
