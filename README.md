@@ -49,6 +49,6 @@
 - [x] Random program button in free play
 - [x] FIX: Bug on instruction wrap-around from last index
 - [x] FIX: index out of range on load, store, etc...
+- [x] left/right arrow sound
 
-- [ ] left/right arrow sound
-- [ ] consider light background soundtrack
+- [?] consider light background soundtrack

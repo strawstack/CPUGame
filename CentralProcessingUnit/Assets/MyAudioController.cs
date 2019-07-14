@@ -9,7 +9,8 @@ public enum AudioType
     HALT,
     END,
     TOCK,
-    START
+    START,
+    NAV
 }
 
 public class MyAudioController : MonoBehaviour {
@@ -22,8 +23,9 @@ public class MyAudioController : MonoBehaviour {
     public AudioClip End;
     public AudioClip Tock;
     public AudioClip Start_Game;
+	public AudioClip Nav;
 
-    private Dictionary<AudioType, AudioClip> lookup;
+	private Dictionary<AudioType, AudioClip> lookup;
     private AudioSource source;
 
     void Start () {
@@ -38,7 +40,8 @@ public class MyAudioController : MonoBehaviour {
         lookup.Add(AudioType.END, End);
         lookup.Add(AudioType.TOCK, Tock);
         lookup.Add(AudioType.START, Start_Game);
-    }
+		lookup.Add(AudioType.NAV, Nav);
+	}
 	
 	public void PlayAudio(AudioType type)
     {

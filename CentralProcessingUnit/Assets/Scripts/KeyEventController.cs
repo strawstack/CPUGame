@@ -27,10 +27,12 @@ public class KeyEventController : MonoBehaviour {
         else if (Input.GetKeyDown("right"))
         {
             GameController.instance.OnNavigation("right");
+            MyAudioController.instance.PlayAudio(AudioType.NAV);
         }
         else if (Input.GetKeyDown("left"))
         {
             GameController.instance.OnNavigation("left");
+            MyAudioController.instance.PlayAudio(AudioType.NAV);
         }
         else if (Input.GetKeyDown("up"))
         {
