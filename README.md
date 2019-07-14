@@ -1,5 +1,7 @@
 # CPU
 
+Play [live demo](https://strawstack.github.io/CPU_Game/web/index.html)
+
 # TODO
 
 - [x] Make register retriever
