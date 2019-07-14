@@ -15,6 +15,8 @@ public class KeyEventController : MonoBehaviour {
         {
             StartButtonController.instance.OnClick();
             HaltButtonController.instance.OnClick();
+            RandomButtonController.instance.OnClick();
+            ClearButtonController.instance.OnClick();
         }
 
         if (Input.GetKeyDown("p"))

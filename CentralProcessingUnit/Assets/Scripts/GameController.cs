@@ -144,6 +144,9 @@ public class GameController : MonoBehaviour {
 
     private IEnumerator Beq(int addr)
     {
+        // overflow address
+        addr %= 80;
+
         Debug.Log("Nav to A");
         yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.A));
 
@@ -164,6 +167,9 @@ public class GameController : MonoBehaviour {
 
     private IEnumerator Blt(int addr)
     {
+        // overflow address
+        addr %= 80;
+
         Debug.Log("Nav to A");
         yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.A));
 
@@ -184,6 +190,9 @@ public class GameController : MonoBehaviour {
 
     private IEnumerator Bgt(int addr)
     {
+        // overflow address
+        addr %= 80;
+
         Debug.Log("Nav to A");
         yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.A));
 
@@ -264,6 +273,9 @@ public class GameController : MonoBehaviour {
 
     private IEnumerator Beq_direct(int addr)
     {
+        // overflow address
+        addr %= 80;
+
         Debug.Log("Nav to memory address");
         yield return StartCoroutine(MemoryRetriever.instance.NavToCell(GridController.instance.GetCells(addr, 1)[0]));
 
@@ -298,6 +310,9 @@ public class GameController : MonoBehaviour {
 
     private IEnumerator StoreA(int addr)
     {
+        // overflow address
+        addr %= 80;
+
         Debug.Log("Nav to A");
         yield return StartCoroutine(RegisterRetriever.instance.NavToRegister(Register.A));
 
@@ -314,6 +329,9 @@ public class GameController : MonoBehaviour {
 
     private IEnumerator LoadA(int addr)
     {
+        // overflow address
+        addr %= 80;
+
         Debug.Log("Nav to memory address");
         yield return StartCoroutine(MemoryRetriever.instance.NavToCell(GridController.instance.GetCells(addr, 1)[0]));
 
@@ -331,6 +349,9 @@ public class GameController : MonoBehaviour {
 
     private IEnumerator LoadB(int addr)
     {
+        // overflow address
+        addr %= 80;
+
         Debug.Log("Nav to memory address");
         yield return StartCoroutine(MemoryRetriever.instance.NavToCell(GridController.instance.GetCells(addr, 1)[0]));
 
@@ -436,6 +457,8 @@ public class GameController : MonoBehaviour {
     {
         HaltButtonController.instance.gameObject.SetActive(true);
         StartButtonController.instance.gameObject.SetActive(false);
+        RandomButtonController.instance.gameObject.SetActive(false);
+        ClearButtonController.instance.gameObject.SetActive(false);
 
         // Register input
         Debug.Log("Wait");
@@ -446,8 +469,8 @@ public class GameController : MonoBehaviour {
 
         // Read value from PC
         Debug.Log("Read value from PC");
-        int pc = RegisterController.instance.GetRegisterValue(Register.PC);
-        yield return StartCoroutine(RegisterRetriever.instance.WriteRegister(Register.PC, pc + 3));
+        int pc = RegisterController.instance.GetRegisterValue(Register.PC);        
+        yield return StartCoroutine(RegisterRetriever.instance.WriteRegister(Register.PC, (pc + 3) % 80));
         Debug.Log("PC: " + pc);
 
         // wait
@@ -501,6 +524,8 @@ public class GameController : MonoBehaviour {
             if (startState == StartState.Started)
                 JobController.instance.PlaceColors(); // place new colors
             StartButtonController.instance.gameObject.SetActive(true);
+            RandomButtonController.instance.gameObject.SetActive(true);
+            ClearButtonController.instance.gameObject.SetActive(true);
         }
         else
         {
@@ -519,7 +544,7 @@ public class GameController : MonoBehaviour {
         return total;
     }
 
-    private void ZeroizeGrid()
+    public void ZeroizeGrid()
     {
         RegisterController.instance.Zeroize();
         GridController.instance.Zeroize();
@@ -535,6 +560,21 @@ public class GameController : MonoBehaviour {
         JobController.instance.EraseColors();
     }
 
+    public void OnRandomButtonPress()
+    {
+        MemoryCellController[] grid = GridController.instance.GetGrid();
+        foreach(MemoryCellController cell in grid)
+        {
+            int value = Random.Range(0, 14);
+            while (value == 6 || value == 7)            
+                value = Random.Range(0, 14);           
+            cell.SetValue(value);
+        }
+        grid[grid.Length - 3].SetValue(15);
+        grid[grid.Length - 2].SetValue(0);
+        grid[grid.Length - 1].SetValue(0);
+    }
+
     public void OnStartButtonPress()
     {
         switch(startState)
@@ -545,7 +585,10 @@ public class GameController : MonoBehaviour {
                 PlaceColors();
                 startState = StartState.Started;
                 StartButtonController.instance.OnStart();
+                RandomButtonController.instance.gameObject.SetActive(false);
+                ClearButtonController.instance.gameObject.SetActive(false);
                 MoneyController.instance.gameObject.SetActive(true);
+                HaltButtonController.instance.ShowPrice(true);
                 break;           
             case StartState.Started:
                 startState = StartState.Ending;
@@ -560,6 +603,9 @@ public class GameController : MonoBehaviour {
                 {
                     startState = StartState.FreePlay;
                     MoneyController.instance.ResetMoney();
+                    RandomButtonController.instance.gameObject.SetActive(true);
+                    ClearButtonController.instance.gameObject.SetActive(true);
+                    HaltButtonController.instance.ShowPrice(false);
                 }));
                 break;
             case StartState.Starting:

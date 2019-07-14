@@ -1,12 +1,12 @@
 ﻿<Properties StartupConfiguration="{DB1FEA45-F47D-9CD1-1FFB-EC5522D71287}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MyAudioController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/HaltButtonController.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameController.cs" Line="10" Column="11" />
-      <File FileName="Assets/Scripts/MoneyController.cs" Line="61" Column="66" />
-      <File FileName="Assets/StartButtonController.cs" Line="40" Column="29" />
-      <File FileName="Assets/Scripts/KeyEventController.cs" Line="59" Column="74" />
-      <File FileName="Assets/HaltButtonController.cs" Line="41" Column="6" />
-      <File FileName="Assets/MyAudioController.cs" Line="20" Column="36" />
+      <File FileName="Assets/Scripts/GameController.cs" Line="507" Column="71" />
+      <File FileName="Assets/Scripts/GridController.cs" Line="1" Column="1" />
+      <File FileName="Assets/ClearButtonController.cs" Line="33" Column="1" />
+      <File FileName="Assets/RandomButtonController.cs" Line="11" Column="38" />
+      <File FileName="Assets/Scripts/KeyEventController.cs" Line="19" Column="18" />
+      <File FileName="Assets/HaltButtonController.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,7 +16,7 @@
               <Node name="BuildScripts" expanded="True" />
               <Node name="Interfaces" expanded="True" />
               <Node name="Scripts" expanded="True" />
-              <Node name="MyAudioController.cs" selected="True" />
+              <Node name="HaltButtonController.cs" selected="True" />
             </Node>
           </Node>
         </State>

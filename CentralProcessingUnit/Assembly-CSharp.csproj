@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\BuildScripts\BuildController.cs" />
+    <Compile Include="Assets\ClearButtonController.cs" />
     <Compile Include="Assets\FlashController.cs" />
     <Compile Include="Assets\HaltButtonController.cs" />
     <Compile Include="Assets\HelpController.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Assets\Interfaces\ICellListener.cs" />
     <Compile Include="Assets\Interfaces\ISelectable.cs" />
     <Compile Include="Assets\MyAudioController.cs" />
+    <Compile Include="Assets\RandomButtonController.cs" />
     <Compile Include="Assets\ScoreController.cs" />
     <Compile Include="Assets\Scripts\ClickController.cs" />
     <Compile Include="Assets\Scripts\DotController.cs" />

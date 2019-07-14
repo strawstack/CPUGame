@@ -46,7 +46,9 @@
 - [x] Halt
 - [x] Win
 - [x] Tock
+- [x] Random program button in free play
+- [x] FIX: Bug on instruction wrap-around from last index
+- [x] FIX: index out of range on load, store, etc...
 
-- [ ] Random program button in free play
+- [ ] left/right arrow sound
 - [ ] consider light background soundtrack
-- [ ] FIX: Bug on instruction wrap-around from last index

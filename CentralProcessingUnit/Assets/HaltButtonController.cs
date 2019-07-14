@@ -16,7 +16,8 @@ public class HaltButtonController : MonoBehaviour, IButton
     void Start () {
         instance = this;
         gameObject.SetActive(false);
-    }
+		ShowPrice(false);
+	}
 
     public void SetBackgroundActive(bool value)
     {
