@@ -41,9 +41,12 @@
 - [x] FIX: disable controls when in the ending state
 - [x] Spark effect when colored cells appear
 - [x] White flash on cell edit
+- [x] cash_pos
+- [x] cash_neg
+- [x] Halt
+- [x] Win
+- [x] Tock
 
-- [ ] cash_pos
-- [ ] cash_neg
-- [ ] Halt
-- [ ] Win
-- [ ] Tock
+- [ ] Random program button in free play
+- [ ] consider light background soundtrack
+- [ ] FIX: Bug on instruction wrap-around from last index
