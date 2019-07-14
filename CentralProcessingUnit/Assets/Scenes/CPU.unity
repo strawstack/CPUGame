@@ -12582,7 +12582,7 @@ MonoBehaviour:
   Cash_Positive: {fileID: 8300000, guid: 9daa3d464951945b39f79be7b63bdcc2, type: 3}
   Cash_Negative: {fileID: 8300000, guid: a184a15136bd44e19ac6c10cd15e6c46, type: 3}
   Halt: {fileID: 8300000, guid: a2b0ae11e013244239d59c98435f4301, type: 3}
-  End: {fileID: 8300000, guid: a9ea0ff0f968b43209e045ab4af50b89, type: 3}
+  End: {fileID: 8300000, guid: 631de056e6c994211a8f985835d53d43, type: 3}
   Tock: {fileID: 8300000, guid: bd70691f090994bb69bdd48ab27ef381, type: 3}
   Start_Game: {fileID: 8300000, guid: 9a848fba36f3348bbb98ff33b569ad06, type: 3}
   Nav: {fileID: 8300000, guid: 48cfd4a18cba849bb954245b0984efd8, type: 3}
@@ -12597,7 +12597,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -71166,7 +71166,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 91a0b614c9e364f6aaf9763a6dac5be1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 1
   Mute: 0

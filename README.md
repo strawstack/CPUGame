@@ -50,5 +50,6 @@
 - [x] FIX: Bug on instruction wrap-around from last index
 - [x] FIX: index out of range on load, store, etc...
 - [x] left/right arrow sound
+- [x] consider light background soundtrack
 
-- [?] consider light background soundtrack
+- [ ] length-four color block that gains in value

@@ -192,4 +192,6 @@ fc5745429380e305545bcc69fed193d1 Assembly-CSharp.dll:.RowColPreview
 9318334b30e9f195f573b2ce00154b95 Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
 03d15b7a4281bba15f403ca2528d2804 Assembly-CSharp.dll:.MemoryRetriever
 93307bd34e39d73fd24e00ec39c25a91 Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
-86a86f26e895842acccd87d52370b81d Assembly-CSharp.dll:.MyAudioController
+14c74a590c21f992fdb5dd2070b8cece Assembly-CSharp.dll:.MyAudioController
+fb237d8af5aa0e866771fe318b1f25fa Assembly-CSharp.dll:.RandomButtonController
+fb237d8af5aa0e866771fe318b1f25fa Assembly-CSharp.dll:.ClearButtonController
