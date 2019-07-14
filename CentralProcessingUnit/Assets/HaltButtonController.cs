@@ -42,6 +42,7 @@ public class HaltButtonController : MonoBehaviour, IButton
         if (hover && !GameController.instance.haltFlag)
         {
             GameController.instance.haltFlag = true;
+            MyAudioController.instance.PlayAudio(AudioType.HALT);
             MoneyController.instance.HaltRequest();
             SetBackgroundActive(false);
             gameObject.SetActive(false);

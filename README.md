@@ -42,4 +42,8 @@
 - [x] Spark effect when colored cells appear
 - [x] White flash on cell edit
 
-- [?] Implement placement of more cell colors
+- [ ] cash_pos
+- [ ] cash_neg
+- [ ] Halt
+- [ ] Win
+- [ ] Tock

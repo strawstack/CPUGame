@@ -12507,6 +12507,148 @@ Transform:
   m_Father: {fileID: 619429837}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &474660347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 474660350}
+  - component: {fileID: 474660349}
+  - component: {fileID: 474660348}
+  m_Layer: 0
+  m_Name: AudioSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &474660348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 474660347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 051d75418b62f4380916d6adb8f2b0e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cash_Positive: {fileID: 8300000, guid: 9daa3d464951945b39f79be7b63bdcc2, type: 3}
+  Cash_Negative: {fileID: 8300000, guid: a184a15136bd44e19ac6c10cd15e6c46, type: 3}
+  Halt: {fileID: 8300000, guid: a2b0ae11e013244239d59c98435f4301, type: 3}
+  End: {fileID: 8300000, guid: a9ea0ff0f968b43209e045ab4af50b89, type: 3}
+  Tock: {fileID: 8300000, guid: bd70691f090994bb69bdd48ab27ef381, type: 3}
+  Start_Game: {fileID: 8300000, guid: 9a848fba36f3348bbb98ff33b569ad06, type: 3}
+--- !u!82 &474660349
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 474660347}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &474660350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 474660347}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &479511772
 GameObject:
   m_ObjectHideFlags: 0
@@ -73968,7 +74110,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1980535339}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.59, y: 8.22, z: -4}
+  m_LocalPosition: {x: -13.59, y: 9.42, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 215862498}
@@ -73985,10 +74127,11 @@ TextMesh:
     \  1        SUB     A  - B => A\n0010   2        MUL     A * B => A\n0011   3
     \       BEQ     Bra if A = 0\n0100   4        BLT      Bra if A < 0\n0101   5
     \       BGT     Bra if A > 0\n0110   6        EMPTY\n0111   7        EMPTY\n1000
-    \  8        ADDi      A + _R => A \n1001   9        SUBi      A - _R => A\n1010
-    \  A        MULi     A * _R => A\n1011   B        BEQ      Bra to A if m[_R]=0\n1100
+    \  8        dADD      A + _R => A \n1001   9        dSUB      A - _R => A\n1010
+    \  A        dMUL     A * _R => A\n1011   B        BEQ      Bra to A if m[_R]=0\n1100
     \  C        STAA     A => m[_R]\n1101   D        LDA       m[_R] => A\n1110   E
-    \        LDB      m[_R] => B\n1111   F         HALT"
+    \        LDB      m[_R] => B\n1111   F         HALT\n\nObjective:\nFill in colored
+    cells by running programs"
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1

@@ -33,11 +33,13 @@ public class StartButtonController : MonoBehaviour, IButton
     public void OnStart()
     {
         text.text = "END";
+        MyAudioController.instance.PlayAudio(AudioType.START);
     }
 
     public void OnEnd()
     {
         text.text = "START";
+        MyAudioController.instance.PlayAudio(AudioType.END);
     }
 
     public void OnClick()

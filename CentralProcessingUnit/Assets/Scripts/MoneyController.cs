@@ -50,13 +50,15 @@ public class MoneyController : MonoBehaviour {
     private void NegativeChange()
     {
         badParticleSystem.Stop();
-        badParticleSystem.Play();      
+        badParticleSystem.Play();
+        MyAudioController.instance.PlayAudio(AudioType.CASH_NEG);
     }
 
     private void PositiveChange()
     {
         goodParticleSystem.Stop();
         goodParticleSystem.Play();
+        MyAudioController.instance.PlayAudio(AudioType.CASH_POS);
     }
 
     public void OnChangeRequest(TransactionType type, int numberCells)

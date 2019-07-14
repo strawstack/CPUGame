@@ -33,10 +33,12 @@ public class KeyEventController : MonoBehaviour {
         else if (Input.GetKeyDown("up"))
         {
             GameController.instance.OnModifyValue(1);
+            MyAudioController.instance.PlayAudio(AudioType.TOCK);
         }
         else if (Input.GetKeyDown("down"))
         {
             GameController.instance.OnModifyValue(-1);
+            MyAudioController.instance.PlayAudio(AudioType.TOCK);
         }
         else if (Input.GetKeyDown("return"))
         {
@@ -54,6 +56,7 @@ public class KeyEventController : MonoBehaviour {
                 if (Input.GetKeyDown(key))
                 {
                     GameController.instance.OnKeyPress(key);
+                    MyAudioController.instance.PlayAudio(AudioType.TOCK);
                     break;
                 }
             }

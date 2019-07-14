@@ -1,10 +1,12 @@
 ﻿<Properties StartupConfiguration="{DB1FEA45-F47D-9CD1-1FFB-EC5522D71287}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MemoryCellController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MyAudioController.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameController.cs" Line="25" Column="34" />
-      <File FileName="Assets/Scripts/MouseColliderController.cs" Line="23" Column="117" />
-      <File FileName="Assets/HoverController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/MemoryCellController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameController.cs" Line="10" Column="11" />
+      <File FileName="Assets/Scripts/MoneyController.cs" Line="61" Column="66" />
+      <File FileName="Assets/StartButtonController.cs" Line="40" Column="29" />
+      <File FileName="Assets/Scripts/KeyEventController.cs" Line="59" Column="74" />
+      <File FileName="Assets/HaltButtonController.cs" Line="41" Column="6" />
+      <File FileName="Assets/MyAudioController.cs" Line="20" Column="36" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,9 +15,8 @@
             <Node name="Assets" expanded="True">
               <Node name="BuildScripts" expanded="True" />
               <Node name="Interfaces" expanded="True" />
-              <Node name="Scripts" expanded="True">
-                <Node name="MemoryCellController.cs" selected="True" />
-              </Node>
+              <Node name="Scripts" expanded="True" />
+              <Node name="MyAudioController.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -24,7 +25,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="afeccbe1-f53e-4e3a-b49c-4b9696fa068c" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="92fe9ee4-47e7-4b12-ac93-01f20abef44f" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
