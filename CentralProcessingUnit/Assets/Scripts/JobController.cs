@@ -147,6 +147,20 @@ public class JobController : MonoBehaviour {
 		return ans;
 	}
 
+    private List<MemoryCellController[]> LightBlueGetPossible()
+    {
+        MemoryCellController[] grid = GridController.instance.GetGrid();
+
+        List<MemoryCellController[]> ans = new List<MemoryCellController[]>();
+        for (int i = 3 * 8; i < grid.Length - 4; i++)
+        {
+            bool value = All(grid, i, i + 4 + 1, (cell) => !cell.isColored);
+            if (value)
+                ans.Add(SubList(grid, i, i + 4));            
+        }
+        return ans;
+    }
+
     private void PlaceScattered(bool singleValue)
     {
         MemoryCellController[] grid = GridController.instance.GetGrid();
@@ -198,7 +212,18 @@ public class JobController : MonoBehaviour {
 					case ColorTypes.YELLOW:
 						break;
 					case ColorTypes.LIGHT_BLUE:
-						break;
+                        List<MemoryCellController[]> possible2 = LightBlueGetPossible();
+                        int choice2 = Random.Range(0, possible2.Count - 1);
+                        MemoryCellController[] group2 = possible2[choice2];
+
+                        int value2 = 1;
+                        foreach (MemoryCellController cell in group2)
+                        {
+                            MakeColor(cell, ColorTypes.LIGHT_BLUE);
+                            SetValuePreview(cell, value2);
+                            value2 *= 2;
+                        }
+                        break;
 				}
 			}
 		}
