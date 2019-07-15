@@ -4,7 +4,7 @@
       <File FileName="Assets/Scripts/GameController.cs" Line="530" Column="75" />
       <File FileName="Assets/MyAudioController.cs" Line="10" Column="9" />
       <File FileName="Assets/Scripts/KeyEventController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/JobController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/JobController.cs" Line="218" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
