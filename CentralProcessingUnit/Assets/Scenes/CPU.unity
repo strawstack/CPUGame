@@ -74717,8 +74717,8 @@ TextMesh:
     \  8        dADD       A + _R => A \n1001   9        dSUB       A - _R => A\n1010
     \  A        dMUL      A * _R => A\n1011   B        dBEQ      Bra to A if m[_R]=0\n1100
     \  C        STAA     A => m[_R]\n1101   D        LDA       m[_R] => A\n1110   E
-    \        LDB      m[_R] => B\n1111   F         HALT\n\nObjective:\nFill in colored
-    cells by running programs"
+    \        LDB      m[_R] => B\n1111   F         HALT\n\nPress ENTER to start program
+    execution.\nFill in colored cells to earn money."
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
