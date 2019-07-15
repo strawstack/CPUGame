@@ -53,5 +53,6 @@ Play [live demo](https://strawstack.github.io/CPU_Game/web/index.html)
 - [x] FIX: index out of range on load, store, etc...
 - [x] left/right arrow sound
 - [x] consider light background soundtrack
+- [x] length-four color block that gains in value
 
-- [ ] length-four color block that gains in value
+- [ ] Put enter key to run program in help menu
