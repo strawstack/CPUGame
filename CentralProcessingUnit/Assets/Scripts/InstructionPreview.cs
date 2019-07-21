@@ -27,8 +27,8 @@ public class InstructionPreview : MonoBehaviour, ICellListener {
         instcLookup.Add(4, "Blt");
         instcLookup.Add(5, "Bgt");
 
-        instcLookup.Add(6, "NDef");
-        instcLookup.Add(7, "NDef");
+        instcLookup.Add(6, "Noop");
+        instcLookup.Add(7, "Noop");
 
         instcLookup.Add(8, "dAdd");
         instcLookup.Add(9, "dSub");

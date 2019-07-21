@@ -45,8 +45,8 @@ public class GameController : MonoBehaviour {
         instructionLookup.Add(0x400, Blt);
         instructionLookup.Add(0x500, Bgt);
 
-        //instructionLookup.Add(0x600, null);
-        //instructionLookup.Add(0x700, null);
+        instructionLookup.Add(0x600, Noop);
+        instructionLookup.Add(0x700, Noop);
 
         instructionLookup.Add(0x800, Add_direct);
         instructionLookup.Add(0x900, Sub_direct);
@@ -209,6 +209,12 @@ public class GameController : MonoBehaviour {
             Debug.Log("Load value into PC");
             yield return StartCoroutine(RegisterController.instance.SetRegisterValue(Register.PC, addr));
         }
+    }
+
+    private IEnumerator Noop(int not_used)
+    {        
+        Debug.Log("Noop");
+        yield return new WaitForSeconds(GameController.instance.moveSpeed);
     }
 
     private IEnumerator Add_direct(int value)
@@ -568,9 +574,7 @@ public class GameController : MonoBehaviour {
         MemoryCellController[] grid = GridController.instance.GetGrid();
         foreach(MemoryCellController cell in grid)
         {
-            int value = Random.Range(0, 14);
-            while (value == 6 || value == 7)            
-                value = Random.Range(0, 14);           
+            int value = Random.Range(0, 14);           
             cell.SetValue(value);
         }
         grid[grid.Length - 3].SetValue(15);

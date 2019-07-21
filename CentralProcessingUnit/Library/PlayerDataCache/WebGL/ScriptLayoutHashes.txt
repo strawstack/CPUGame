@@ -21,6 +21,7 @@ c7dd12c15208b0447e101f80038706df UnityEngine.Timeline.dll:UnityEngine.Timeline.A
 64f3a13c1277a7f1324321d93d0ec13b UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 db95ee5d1f5bc3446660fdf010e1ebab Assembly-CSharp.dll:.BuildController
 f6637497451c9a030c421de4a1ad5cdb Unity.TextMeshPro.dll:TMPro.TMP_ScrollbarEventHandler
+14c74a590c21f992fdb5dd2070b8cece Assembly-CSharp.dll:.MyAudioController
 b14b4630cc47b6e9ea8a644551a6a8cc Unity.TextMeshPro.dll:TMPro.TMP_Text
 08fc190f70052ad201f2a66187eafcd6 Assembly-CSharp.dll:.MemoryCellController
 35b7424ac8e8f5da7f149cc42701175e Assembly-CSharp.dll:.HaltButtonController
@@ -131,10 +132,12 @@ d75dc834c5dec688db75a55a1724c90f UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 e1ea12ca952c81d81a9a21fdf34446ed UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 98d69a140ec0084cde3b6a5e09aea295 UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 dfd33ff9ae3ce8d7ca1f22b475ec2387 UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
+fb237d8af5aa0e866771fe318b1f25fa Assembly-CSharp.dll:.ClearButtonController
 96f3ea9f23b6f08e60710ebb4af49174 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
 9a90054f232ce0b702a436ebb7a50862 Assembly-CSharp.dll:.GameController
 f16835701e71dd5d6fb1fed4b7aff1d8 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 fb237d8af5aa0e866771fe318b1f25fa Assembly-CSharp.dll:.StartButtonController
+fb237d8af5aa0e866771fe318b1f25fa Assembly-CSharp.dll:.RandomButtonController
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.GridController
 486cd95c82d8305219c352c06b776e1f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.RegisterObject
@@ -192,6 +195,3 @@ fc5745429380e305545bcc69fed193d1 Assembly-CSharp.dll:.RowColPreview
 9318334b30e9f195f573b2ce00154b95 Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
 03d15b7a4281bba15f403ca2528d2804 Assembly-CSharp.dll:.MemoryRetriever
 93307bd34e39d73fd24e00ec39c25a91 Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
-14c74a590c21f992fdb5dd2070b8cece Assembly-CSharp.dll:.MyAudioController
-fb237d8af5aa0e866771fe318b1f25fa Assembly-CSharp.dll:.RandomButtonController
-fb237d8af5aa0e866771fe318b1f25fa Assembly-CSharp.dll:.ClearButtonController

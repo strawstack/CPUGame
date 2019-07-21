@@ -55,4 +55,5 @@ Play [live demo](https://strawstack.github.io/CPU_Game/web/index.html)
 - [x] consider light background soundtrack
 - [x] length-four color block that gains in value
 
-- [ ] Put enter key to run program in help menu
+- [x] Put enter key to run program in help menu
+- [ ] FIX: 6 or 7 will probably throw an exception on being run
