@@ -2,6 +2,10 @@
 
 Play [live demo](https://richardhayes.itch.io/the-central-processing-unit)
 
+# Screenshot
+
+[![](./screenshot.png)](https://richardhayes.itch.io/the-central-processing-unit)
+
 # TODO
 
 - [x] Make register retriever
