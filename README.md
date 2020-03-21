@@ -1,6 +1,6 @@
 # CPU
 
-Play [live demo](https://strawstack.github.io/CPU_Game/web/index.html)
+Play [live demo](https://richardhayes.itch.io/the-central-processing-unit)
 
 # TODO
 
