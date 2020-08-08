@@ -1,6 +1,10 @@
 # CPU
 
-Play [live demo](https://richardhayes.itch.io/the-central-processing-unit)
+Simulation of a simple CPU
+
+# Live Demo
+
+[View Live Demo](https://richardhayes.itch.io/the-central-processing-unit)
 
 # Screenshot
 
